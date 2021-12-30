@@ -40,5 +40,7 @@ export default {
   flex-direction: row;
   color: #fff;
   font-size: 16PX;
+  z-index: 10;
+  position: relative;
 }
 </style>

@@ -12,6 +12,16 @@
           <zhu2 class="bars"></zhu2>
         </item>
       </div>
+      <div class="items">
+        <item title="zhu3" link="/zhu/zhu3">
+          <zhu3 class="bars"></zhu3>
+        </item>
+      </div>
+      <div class="items">
+        <item title="zhu4" link="/zhu/zhu3">
+          <zhu4 class="bars"></zhu4>
+        </item>
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +31,8 @@ import headers from "../components/header";
 import item from "../components/item";
 import zhu from "@/components/zhu/zhu/zhu";
 import zhu2 from "@/components/zhu/zhu2/index";
+import zhu3 from "@/components/zhu/zhu3/index";
+import zhu4 from "@/components/zhu/zhu4/index";
 
 export default {
   data() {
@@ -31,7 +43,9 @@ export default {
     headers,
     item,
     zhu,
-    zhu2
+    zhu2,
+    zhu3,
+    zhu4
   },
   created() {
 
@@ -83,7 +97,7 @@ export default {
 }
 
 .items {
-  width: 30%;
+  width: 25%;
   height: 200px;
 }
 

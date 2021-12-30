@@ -123,6 +123,24 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/zhu/zhu3',
+      name: 'zhu3',
+      component: resolve => require(['@/views/zhu/zhu3'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/zhu/zhu4',
+      name: 'zhu4',
+      component: resolve => require(['@/views/zhu/zhu4'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
     // {
     //   path: '/map',
     //   name: 'map',
