@@ -43,6 +43,15 @@ const router = new Router({
       }
     },
     {
+      path: '/map/map3',
+      name: 'bar',
+      component: resolve => require(['@/views/map/map3'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
       path: '/map',
       name: 'bar',
       component: resolve => require(['@/views/map'], resolve),

@@ -12,6 +12,11 @@
           <map2 class="bars"></map2>
         </item>
       </div>
+      <div class="items">
+        <item title="map3" link="/map/map3">
+          <map3 class="bars"></map3>
+        </item>
+      </div>
     </div>
   </div>
 </template>
@@ -24,6 +29,7 @@ import {annual, daily} from "@/api/api/user";
 import {mapGetters} from 'vuex';
 import map1 from "@/components/map/map1/map1";
 import map2 from "@/components/map/map2/map2";
+import map3 from "@/components/map/map3/map3";
 
 export default {
   data() {
@@ -33,7 +39,8 @@ export default {
     headers,
     item,
     map1,
-    map2
+    map2,
+    map3
   },
   created() {
 
@@ -115,7 +122,7 @@ export default {
 }
 
 .items {
-  width: 30%;
+  width: 25%;
   height: 200px;
 }
 
