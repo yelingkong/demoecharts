@@ -2,7 +2,7 @@
   <div class="header">
     <router-link to="/map">地图</router-link>
     <router-link to="/line">折线图</router-link>
-    <router-link to="/bar">柱状图</router-link>
+    <router-link to="/zhu">柱状图</router-link>
     <router-link to="/">饼状图</router-link>
   </div>
 </template>

@@ -187,9 +187,9 @@ export default {
           orient: 'vertical',
           top: 'center',
           right: '10',
-          itemGap: FontChart(20),
-          itemWidth: FontChart(20),
-          itemHeight: FontChart(20),
+          itemGap: 10,
+          itemWidth: 10,
+          itemHeight: 10,
           formatter: ["{a|{name}}"].join("\n"),
           width: '10%',
           show: false,
@@ -197,8 +197,8 @@ export default {
             color: 'rgba(190, 198, 218, 1)',
             rich: {
               a: {
-                fontSize: FontChart(32),
-                width: FontChart(40)
+                fontSize: 16,
+                width: 40
               }
             }
           }
@@ -221,7 +221,7 @@ export default {
                 return res.name + ' ' + res.percent + "%"
               },
               color: '#fff',
-              fontSize: FontChart(28)
+              fontSize: 14
             },
             labelLine: {
               show: true,

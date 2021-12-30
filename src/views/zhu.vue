@@ -3,18 +3,13 @@
     <headers class="wow fadeInDown"></headers>
     <div class="homemain">
       <div class="items">
-        <item title="bar1" link="/bar/bar1">
-          <bar1 class="bars"></bar1>
+        <item title="zhu" link="/zhu/zhu1">
+          <zhu class="bars"></zhu>
         </item>
       </div>
       <div class="items">
-        <item title="bar2" link="/bar/bar2">
-          <bar2 class="bars"></bar2>
-        </item>
-      </div>
-      <div class="items">
-        <item title="bar3" link="/bar/bar3">
-          <bar3 class="bars"></bar3>
+        <item title="zhu2" link="/zhu/zhu2">
+          <zhu2 class="bars"></zhu2>
         </item>
       </div>
     </div>
@@ -22,12 +17,10 @@
 </template>
 
 <script>
-// 头部
 import headers from "../components/header";
 import item from "../components/item";
-import bar1 from "@/components/bar/bar1/bar1";
-import bar2 from "@/components/bar/bar2/bar2";
-import bar3 from "@/components/bar/bar3/index";
+import zhu from "@/components/zhu/zhu/zhu";
+import zhu2 from "@/components/zhu/zhu2/index";
 
 export default {
   data() {
@@ -37,9 +30,8 @@ export default {
   components: {
     headers,
     item,
-    bar1,
-    bar2,
-    bar3
+    zhu,
+    zhu2
   },
   created() {
 
@@ -91,7 +83,7 @@ export default {
 }
 
 .items {
-  width: 25%;
+  width: 30%;
   height: 200px;
 }
 

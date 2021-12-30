@@ -60,6 +60,69 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/line',
+      name: 'line',
+      component: resolve => require(['@/views/line'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/line/line1',
+      name: 'line',
+      component: resolve => require(['@/views/line/line1'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/bar/bar2',
+      name: 'line',
+      component: resolve => require(['@/views/bar/bar2'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/bar/bar3',
+      name: 'line',
+      component: resolve => require(['@/views/bar/bar3'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/zhu',
+      name: 'zhu',
+      component: resolve => require(['@/views/zhu'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/zhu/zhu1',
+      name: 'zhu1',
+      component: resolve => require(['@/views/zhu/zhu1'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/zhu/zhu2',
+      name: 'zhu2',
+      component: resolve => require(['@/views/zhu/zhu2'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
     // {
     //   path: '/map',
     //   name: 'map',
