@@ -1,7 +1,6 @@
 'use strict'
-var ip = 'http://h.jids.cn/'
+var ip = ''
 const webpack = require('webpack')
-
 module.exports = {
   publicPath: '',
   productionSourceMap: false,
