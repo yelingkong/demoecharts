@@ -1,25 +1,23 @@
 <template>
   <div class="items">
-    <item title="map1">
-      <map1 class="bars"></map1>
+    <item title="map2">
+      <map2 class="bars"></map2>
     </item>
   </div>
 </template>
 
 <script>
 // 头部
-import headers from "@/components/header";
 import item from "@/components/item";
-import map1 from "@/components/map/map1/map1";
+import map2 from "@/components/map/map2/map2";
 
 export default {
   data() {
     return {}
   },
   components: {
-    headers,
     item,
-    map1
+    map2
   },
   created() {
 
