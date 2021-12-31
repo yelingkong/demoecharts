@@ -7,7 +7,7 @@
 <script>
 
 import {ArrayMax, FontChart} from "@/utils/utils";
-import types from '../../data/type.json'
+import types from '../../../data/type.json'
 
 export default {
   name: 'echarts1',
@@ -94,23 +94,23 @@ export default {
     },
   },
   mounted() {
-    // this.drawLine()
+    this.drawLine()
   },
   methods: {
-    getdatax() {
-      var newlist = [this.total1, this.total2, this.total3, this.total4]
-      var max = ArrayMax(newlist)
-      this.drawLine(max)
-    },
-    drawLine(max) {
+    // getdatax() {
+    //   var newlist = [this.total1, this.total2, this.total3, this.total4]
+    //   var max = ArrayMax(newlist)
+    //   this.drawLine(max)
+    // },
+    drawLine() {
       var that = this
       var indicator = [
-        {name: '案防', max: max},
-        {name: '运营', max: max},
-        {name: '安防', max: max},
-        {name: '营销', max: max},
+        {name: '案防', max: 500},
+        {name: '运营', max: 500},
+        {name: '安防', max: 500},
+        {name: '营销', max: 500},
       ]
-      var dataValue = [this.total1, this.total2, this.total3, this.total4]
+      var dataValue = [30, 400, 300, 400]
       window.addEventListener('resize', this.drawLine)
       let myChart = this.$echarts.init(this.$refs.echarts)
 

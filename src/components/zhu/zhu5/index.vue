@@ -11,16 +11,57 @@ import {FontChart} from "@/utils/utils";
 export default {
   name: 'echarts1',
   components: {},
-  props: {
-    list: {
-      type: Array,
-      default() {
-        return []
-      }
-    }
-  },
+  props: {},
   data() {
-    return {}
+    return {
+      list: [
+        {
+          "bankId": "001",
+          "bankName": "上海分行",
+          "num": 2
+        },
+        {
+          "bankId": "002",
+          "bankName": "北京分行",
+          "num": 2
+        },
+        {
+          "bankId": "003",
+          "bankName": "天津分行",
+          "num": 2
+        },
+        {
+          "bankId": "004",
+          "bankName": "深圳分行",
+          "num": 2
+        },
+        {
+          "bankId": "005",
+          "bankName": "苏州分行",
+          "num": 2
+        },
+        {
+          "bankId": "006",
+          "bankName": "杭州分行",
+          "num": 2
+        },
+        {
+          "bankId": "007",
+          "bankName": "宁波分行",
+          "num": 1
+        },
+        {
+          "bankId": "008",
+          "bankName": "成都分行",
+          "num": 2
+        },
+        {
+          "bankId": "009",
+          "bankName": "南京分行",
+          "num": 2
+        }
+      ]
+    }
   },
   watch: {
     list() {

@@ -87,6 +87,24 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/leida',
+      name: 'leida',
+      component: resolve => require(['@/views/leida/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/leida/:id',
+      name: 'leida',
+      component: resolve => require(['@/views/leida/page'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
     // {
     //   path: '/map',
     //   name: 'map',

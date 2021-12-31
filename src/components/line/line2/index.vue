@@ -38,7 +38,7 @@ export default {
       let myChart = this.$echarts.init(this.$refs.echarts)
       var list = this.list
       var xdata = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
-      var ydata = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      var ydata = [10, 10, 10, 10, 10, 10, 50, 20, 10, 30, 20, 8]
       list.forEach((type, index) => {
         xdata.forEach((type2, index2) => {
           if (xdata[index2] === moment(type.time).format("M月")) {
