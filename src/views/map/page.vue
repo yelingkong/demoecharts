@@ -1,29 +1,30 @@
 <template>
   <div class="items">
-    <item title="zhu3">
-      <zhu class="zhu"></zhu>
+    <item :title="$route.params.id">
+      <component :is="dynamicCom"/>
     </item>
   </div>
 </template>
 
 <script>
+// 头部
 import item from "@/components/item";
-import zhu from "@/components/zhu/zhu3/index";
 
 export default {
   data() {
-    return {}
+    return {
+      dynamicCom: null
+    }
   },
   components: {
     item,
-    zhu
   },
   created() {
-
+    console.log(this.$route.params.id)
+    this.dynamicCom = require(`../../components/map/${this.$route.params.id}/index.vue`).default
   },
   watch: {},
   mounted() {
-    new this.$wow.WOW().init()
   },
   methods: {},
   filters: {}
@@ -62,7 +63,7 @@ export default {
 
 .bars {
   width: 100%;
-  height: calc(100% - 50PX);
+  height: calc(100% - 100PX);
   position: relative;
 }
 </style>

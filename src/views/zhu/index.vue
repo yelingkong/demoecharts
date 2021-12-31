@@ -2,9 +2,9 @@
   <div class="homebody">
     <headers class="wow fadeInDown"></headers>
     <div class="homemain">
-      <div class="items">
-        <item title="line1" link="/line/line1">
-          <line1 class="bars"></line1>
+      <div class="items" v-for="(app,index) in comps" :key="index">
+        <item :title="app" :link="'/zhu/'+app">
+          <component :is="dynamicCom[index]"></component>
         </item>
       </div>
     </div>
@@ -12,29 +12,35 @@
 </template>
 
 <script>
-// 头部
-import headers from "../components/header";
-import item from "../components/item";
-import line1 from "@/components/line/line1/line1";
-
+import headers from "../../components/header";
+import item from "../../components/item";
 export default {
   data() {
     return {
-      time: null
+      comps: [],
+      dynamicCom: []
     }
   },
   components: {
     headers,
     item,
-    line1
   },
   created() {
+    const files = require.context('../../components/zhu', true, /.vue$/).keys();
+    console.log(files)
+    files.forEach((type) => {
+      this.comps.push(type.match(/.\/(\S*)\/index.vue/)[1])
+    });
+    console.log(this.comps)
+    this.comps.forEach(app => {
+      this.dynamicCom.push(require(`../../components/zhu/${app}/index.vue`).default)
+    })
   },
+  watch: {},
   mounted() {
     new this.$wow.WOW().init()
   },
-  methods: {
-  },
+  methods: {},
   filters: {}
 }
 </script>
@@ -75,7 +81,7 @@ export default {
 }
 
 .items {
-  width: 30%;
+  width: 25%;
   height: 200px;
 }
 

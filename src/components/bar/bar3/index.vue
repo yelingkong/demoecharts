@@ -13,11 +13,6 @@ export default {
     return {
     }
   },
-  watch: {
-    list() {
-      this.drawLine()
-    },
-  },
   mounted() {
     this.drawLine()
   },

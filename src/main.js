@@ -11,8 +11,14 @@ import './element-variables.scss'
 import store from './store'
 import echarts from 'echarts'
 import wow from 'wowjs'
-import './mock/index'
 
+const context = require.context('@/components', true, /\.vue$/);
+const install = (Vue) => {
+  context.keys().forEach((key) => {
+    const component = context(key).default;
+    Vue.component(component.name, component);
+  });
+};
 Vue.prototype.$echarts = echarts
 Vue.prototype.$wow = wow
 Vue.prototype.axios = axios

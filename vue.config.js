@@ -2,6 +2,7 @@
 const webpack = require('webpack')
 module.exports = {
   publicPath: '',
+  runtimeCompiler: true,
   productionSourceMap: false,
   lintOnSave: false,
   configureWebpack: {

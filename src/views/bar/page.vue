@@ -1,7 +1,7 @@
 <template>
   <div class="items">
-    <item title="bar2">
-      <bar2 class="bars"></bar2>
+    <item :title="$route.params.id">
+      <component :is="dynamicCom"/>
     </item>
   </div>
 </template>
@@ -9,22 +9,22 @@
 <script>
 // 头部
 import item from "@/components/item";
-import bar2 from "@/components/bar/bar2/bar2";
 
 export default {
   data() {
-    return {}
+    return {
+      dynamicCom: null
+    }
   },
   components: {
     item,
-    bar2
   },
   created() {
-
+    console.log(this.$route.params.id)
+    this.dynamicCom = require(`../../components/bar/${this.$route.params.id}/index.vue`).default
   },
   watch: {},
   mounted() {
-    new this.$wow.WOW().init()
   },
   methods: {},
   filters: {}

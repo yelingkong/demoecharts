@@ -7,54 +7,45 @@ const router = new Router({
   base: '/',
   routes: [
     {
+      path: '/bar',
+      name: 'home',
+      component: resolve => require(['@/views/bar/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
       path: '/',
       name: 'home',
-      component: resolve => require(['@/views/home'], resolve),
+      component: resolve => require(['@/views/bar/index'], resolve),
       meta: {
         requiresAuth: true,
         showPage: true
       }
     },
     {
-      path: '/bar/bar1',
-      name: 'bar',
-      component: resolve => require(['@/views/bar/bar1'], resolve),
+      path: '/bar/:id',
+      name: 'home',
+      component: resolve => require(['@/views/bar/page'], resolve),
       meta: {
         requiresAuth: true,
         showPage: true
       }
     },
     {
-      path: '/map/map1',
-      name: 'bar',
-      component: resolve => require(['@/views/map/map1'], resolve),
+      path: '/zhu',
+      name: 'home',
+      component: resolve => require(['@/views/zhu/index'], resolve),
       meta: {
         requiresAuth: true,
         showPage: true
       }
     },
     {
-      path: '/map/map2',
-      name: 'bar',
-      component: resolve => require(['@/views/map/map2'], resolve),
-      meta: {
-        requiresAuth: true,
-        showPage: true
-      }
-    },
-    {
-      path: '/map/map3',
-      name: 'bar',
-      component: resolve => require(['@/views/map/map3'], resolve),
-      meta: {
-        requiresAuth: true,
-        showPage: true
-      }
-    },
-    {
-      path: '/map',
-      name: 'bar',
-      component: resolve => require(['@/views/map'], resolve),
+      path: '/zhu/:id',
+      name: 'home',
+      component: resolve => require(['@/views/zhu/page'], resolve),
       meta: {
         requiresAuth: true,
         showPage: true
@@ -63,79 +54,34 @@ const router = new Router({
     {
       path: '/line',
       name: 'line',
-      component: resolve => require(['@/views/line'], resolve),
+      component: resolve => require(['@/views/line/index'], resolve),
       meta: {
         requiresAuth: true,
         showPage: true
       }
     },
     {
-      path: '/line/line1',
+      path: '/line/:id',
       name: 'line',
-      component: resolve => require(['@/views/line/line1'], resolve),
+      component: resolve => require(['@/views/line/page'], resolve),
       meta: {
         requiresAuth: true,
         showPage: true
       }
     },
     {
-      path: '/bar/bar2',
-      name: 'line',
-      component: resolve => require(['@/views/bar/bar2'], resolve),
+      path: '/map',
+      name: 'map',
+      component: resolve => require(['@/views/map/index'], resolve),
       meta: {
         requiresAuth: true,
         showPage: true
       }
     },
     {
-      path: '/bar/bar3',
-      name: 'line',
-      component: resolve => require(['@/views/bar/bar3'], resolve),
-      meta: {
-        requiresAuth: true,
-        showPage: true
-      }
-    },
-    {
-      path: '/zhu',
-      name: 'zhu',
-      component: resolve => require(['@/views/zhu'], resolve),
-      meta: {
-        requiresAuth: true,
-        showPage: true
-      }
-    },
-    {
-      path: '/zhu/zhu1',
-      name: 'zhu1',
-      component: resolve => require(['@/views/zhu/zhu1'], resolve),
-      meta: {
-        requiresAuth: true,
-        showPage: true
-      }
-    },
-    {
-      path: '/zhu/zhu2',
-      name: 'zhu2',
-      component: resolve => require(['@/views/zhu/zhu2'], resolve),
-      meta: {
-        requiresAuth: true,
-        showPage: true
-      }
-    },
-    {
-      path: '/zhu/zhu3',
-      name: 'zhu3',
-      component: resolve => require(['@/views/zhu/zhu3'], resolve),
-      meta: {
-        requiresAuth: true,
-        showPage: true
-      }
-    },
-    {
-      path: '/zhu/zhu4',
-      name: 'zhu4',
-      component: resolve => require(['@/views/zhu/zhu4'], resolve),
+      path: '/map/:id',
+      name: 'map',
+      component: resolve => require(['@/views/map/page'], resolve),
       meta: {
         requiresAuth: true,
         showPage: true

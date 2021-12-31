@@ -2,24 +2,9 @@
   <div class="homebody">
     <headers class="wow fadeInDown"></headers>
     <div class="homemain">
-      <div class="items">
-        <item title="zhu" link="/zhu/zhu1">
-          <zhu class="bars"></zhu>
-        </item>
-      </div>
-      <div class="items">
-        <item title="zhu2" link="/zhu/zhu2">
-          <zhu2 class="bars"></zhu2>
-        </item>
-      </div>
-      <div class="items">
-        <item title="zhu3" link="/zhu/zhu3">
-          <zhu3 class="bars"></zhu3>
-        </item>
-      </div>
-      <div class="items">
-        <item title="zhu4" link="/zhu/zhu3">
-          <zhu4 class="bars"></zhu4>
+      <div class="items" v-for="(app,index) in comps" :key="index">
+        <item :title="app" :link="'/line/'+app">
+          <component :is="dynamicCom[index]"></component>
         </item>
       </div>
     </div>
@@ -27,36 +12,35 @@
 </template>
 
 <script>
-import headers from "../components/header";
-import item from "../components/item";
-import zhu from "@/components/zhu/zhu/zhu";
-import zhu2 from "@/components/zhu/zhu2/index";
-import zhu3 from "@/components/zhu/zhu3/index";
-import zhu4 from "@/components/zhu/zhu4/index";
-
+import headers from "../../components/header";
+import item from "../../components/item";
 export default {
   data() {
     return {
+      comps: [],
+      dynamicCom: []
     }
   },
   components: {
     headers,
     item,
-    zhu,
-    zhu2,
-    zhu3,
-    zhu4
   },
   created() {
-
+    const files = require.context('../../components/line', true, /.vue$/).keys();
+    console.log(files)
+    files.forEach((type) => {
+      this.comps.push(type.match(/.\/(\S*)\/index.vue/)[1])
+    });
+    console.log(this.comps)
+    this.comps.forEach(app => {
+      this.dynamicCom.push(require(`../../components/line/${app}/index.vue`).default)
+    })
   },
-  watch: {
-  },
+  watch: {},
   mounted() {
     new this.$wow.WOW().init()
   },
-  methods: {
-  },
+  methods: {},
   filters: {}
 }
 </script>

@@ -1,32 +1,30 @@
 <template>
   <div class="items">
-    <item title="map1">
-      <map1 class="bars"></map1>
+    <item :title="$route.params.id">
+      <component :is="dynamicCom"/>
     </item>
   </div>
 </template>
 
 <script>
 // 头部
-import headers from "@/components/header";
 import item from "@/components/item";
-import map1 from "@/components/map/map1/map1";
 
 export default {
   data() {
-    return {}
+    return {
+      dynamicCom: null
+    }
   },
   components: {
-    headers,
     item,
-    map1
   },
   created() {
-
+    console.log(this.$route.params.id)
+    this.dynamicCom = require(`../../components/line/${this.$route.params.id}/index.vue`).default
   },
   watch: {},
   mounted() {
-    new this.$wow.WOW().init()
   },
   methods: {},
   filters: {}
@@ -65,7 +63,7 @@ export default {
 
 .bars {
   width: 100%;
-  height: calc(100% - 50PX);
+  height: calc(100% - 100PX);
   position: relative;
 }
 </style>
