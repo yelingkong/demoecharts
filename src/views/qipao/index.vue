@@ -81,8 +81,8 @@ export default {
 }
 
 .items {
-  width: 25%;
-  height: 200px;
+  width: 33.33%;
+  height: 400px;
 }
 
 .bars {
