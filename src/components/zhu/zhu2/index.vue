@@ -22,39 +22,14 @@ export default {
       status: '',
       active: false,
       list: ['1月', '2月', '3月', '4月', '5月'],
-      isFullscreen: false
     }
   },
   watch: {
-    isFullscreen () {
-      if (!this.isFullscreen) {
-        this.active = false
-        if (this.active) {
-          this.list = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
-        } else {
-          this.list = ['1月', '2月', '3月', '4月', '5月']
-        }
-        this.$nextTick(() => {
-          this.drawLine()
-        })
-      }
-    },
   },
   mounted () {
     this.drawLine()
   },
   methods: {
-    getactive () {
-      this.active = !this.active
-      if (this.active) {
-        this.list = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
-      } else {
-        this.list = ['1月', '2月', '3月', '4月', '5月']
-      }
-      this.$nextTick(() => {
-        this.drawLine()
-      })
-    },
     drawLine () {
       // 基于准备好的dom，初始化echarts实例
       window.addEventListener('resize', this.drawLine)
@@ -179,27 +154,34 @@ export default {
           name: '订单总数',
           type: 'bar',
           xAxisIndex: 1,
+          twinkle: {
+            enabled: false,
+            period: 0
+          },
           itemStyle: {
             normal: {
               show: true,
               color: 'rgba(22, 54, 129, 1)',
               barBorderRadius: 0,
               borderWidth: 0,
-              borderColor: '#333',
             }
           },
           barWidth: '20%',
           data: [33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33,]
-        }, {
+        },
+          {
           name: '异常订单',
           type: 'bar',
+          twinkle: {
+            enabled: false,
+            period: 0
+          },
           itemStyle: {
             normal: {
               show: true,
               color: 'rgba(255, 64, 73, 1)',
               barBorderRadius: 0,
               borderWidth: 0,
-              borderColor: '#333',
             }
           },
           label: {
@@ -217,6 +199,10 @@ export default {
           {
             name: '未支付订单',
             xAxisIndex: 2,
+            twinkle: {
+              enabled: false,
+              period: 0
+            },
             type: 'bar',
             itemStyle: {
               normal: {
@@ -224,7 +210,6 @@ export default {
                 color: 'rgba(91, 40, 255, 1)',
                 barBorderRadius: 0,
                 borderWidth: 0,
-                borderColor: '#333',
               }
             },
             label: {
@@ -253,7 +238,6 @@ export default {
 .echarts1 {
   position: relative;
   width: 100%;
-  height: 100%;
-  margin-top: -30px;
+  height: calc(100% - 50PX);
 }
 </style>

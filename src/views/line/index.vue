@@ -1,6 +1,6 @@
 <template>
   <div class="homebody">
-    <headers class="wow fadeInDown"></headers>
+    <headers></headers>
     <div class="homemain">
       <div class="items" v-for="(app,index) in comps" :key="index">
         <item :title="app" :link="'/line/'+app">

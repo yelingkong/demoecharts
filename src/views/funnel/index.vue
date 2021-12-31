@@ -3,7 +3,7 @@
     <headers></headers>
     <div class="homemain">
       <div class="items" v-for="(app,index) in comps" :key="index">
-        <item :title="app" :link="'/zhu/'+app">
+        <item :title="app" :link="'/funnel/'+app">
           <component :is="dynamicCom[index]"></component>
         </item>
       </div>
@@ -26,14 +26,14 @@ export default {
     item,
   },
   created() {
-    const files = require.context('../../components/zhu', true, /.vue$/).keys();
+    const files = require.context('../../components/funnel', true, /.vue$/).keys();
     console.log(files)
     files.forEach((type) => {
       this.comps.push(type.match(/.\/(\S*)\/index.vue/)[1])
     });
     console.log(this.comps)
     this.comps.forEach(app => {
-      this.dynamicCom.push(require(`../../components/zhu/${app}/index.vue`).default)
+      this.dynamicCom.push(require(`../../components/funnel/${app}/index.vue`).default)
     })
   },
   watch: {},

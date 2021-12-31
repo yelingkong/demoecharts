@@ -217,7 +217,6 @@ export default {
 .echarts1 {
   position: relative;
   width: 100%;
-  height: 100%;
-  margin-top: -30px;
+  height: calc(100% - 50PX);
 }
 </style>

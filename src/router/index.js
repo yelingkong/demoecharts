@@ -105,15 +105,78 @@ const router = new Router({
         showPage: true
       }
     },
-    // {
-    //   path: '/map',
-    //   name: 'map',
-    //   component: resolve => require(['@/views/map'], resolve),
-    //   meta: {
-    //     requiresAuth: true,
-    //     showPage: true
-    //   }
-    // },
+    {
+      path: '/qipao',
+      name: 'qipao',
+      component: resolve => require(['@/views/qipao/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/qipao/:id',
+      name: 'qipao',
+      component: resolve => require(['@/views/qipao/page'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: resolve => require(['@/views/dashboard/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/dashboard/:id',
+      name: 'dashboard',
+      component: resolve => require(['@/views/dashboard/page'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/funnel',
+      name: 'funnel',
+      component: resolve => require(['@/views/funnel/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/funnel/:id',
+      name: 'funnel',
+      component: resolve => require(['@/views/funnel/page'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/liquidFill',
+      name: 'liquidFill',
+      component: resolve => require(['@/views/liquidFill/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/liquidFill/:id',
+      name: 'liquidFill',
+      component: resolve => require(['@/views/liquidFill/page'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {

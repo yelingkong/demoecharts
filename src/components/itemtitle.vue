@@ -41,6 +41,9 @@ export default {
   color: #fff;
   font-size: 16PX;
   z-index: 10;
-  position: relative;
+  position: absolute;
+  text-indent: 20px;
+  left: 0;
+  top: 0;
 }
 </style>

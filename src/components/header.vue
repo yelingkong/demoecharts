@@ -1,10 +1,16 @@
 <template>
   <div class="header">
+    <a href="/" target="_blank">首页</a>
     <router-link to="/map">地图</router-link>
     <router-link to="/line">折线图</router-link>
     <router-link to="/zhu">柱状图</router-link>
     <router-link to="/">饼状图</router-link>
     <router-link to="/leida">雷达图</router-link>
+    <router-link to="/qipao">气泡</router-link>
+    <router-link to="/dashboard">仪表盘</router-link>
+    <router-link to="/funnel">漏斗图</router-link>
+    <router-link to="/liquidFill">水球图</router-link>
+    <a href="https://github.com/yelingkong/demoecharts" target="_blank" rel="nofollow noopener">github</a>
   </div>
 </template>
 
