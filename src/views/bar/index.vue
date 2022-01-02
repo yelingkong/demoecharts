@@ -50,11 +50,12 @@ export default {
   width: 100%;
   position: relative;
   height: 100%;
+  overflow-y: scroll;
   background: #09254C;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: row;
 
   .homemain {
