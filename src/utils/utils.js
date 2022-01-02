@@ -191,3 +191,10 @@ export function ArrayMax(array) {
 export function ArrayMix(array) {
   return Math.min.apply(Math, array)
 }
+export function openLink (url, target) {
+  var a = document.createElement('a')
+  a.setAttribute('href', url)
+  a.setAttribute('target', target || '_blank')
+  document.body.appendChild(a)
+  a.click()
+}

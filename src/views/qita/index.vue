@@ -3,7 +3,7 @@
     <headers></headers>
     <div class="homemain">
       <div class="items" v-for="(app,index) in comps" :key="index">
-        <item :title="app" :link="'/map/'+app">
+        <item :title="app" :link="'/qita/'+app">
           <component :is="dynamicCom[index]"></component>
         </item>
       </div>
@@ -26,14 +26,14 @@ export default {
     item,
   },
   created() {
-    const files = require.context('../../components/map', true, /.vue$/).keys();
+    const files = require.context('../../components/qita', true, /.vue$/).keys();
     console.log(files)
     files.forEach((type) => {
       this.comps.push(type.match(/.\/(\S*)\/index.vue/)[1])
     });
     console.log(this.comps)
     this.comps.forEach(app => {
-      this.dynamicCom.push(require(`../../components/map/${app}/index.vue`).default)
+      this.dynamicCom.push(require(`../../components/qita/${app}/index.vue`).default)
     })
   },
   watch: {},
@@ -50,13 +50,13 @@ export default {
   width: 100%;
   position: relative;
   height: 100%;
-  overflow-y: scroll;
   background: #09254C;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
+
   .homemain {
     width: calc(100% - 40px);
     margin: 10px auto;

@@ -177,6 +177,24 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/qita',
+      name: 'qita',
+      component: resolve => require(['@/views/qita/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/qita/:id',
+      name: 'qita',
+      component: resolve => require(['@/views/qita/page'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {
