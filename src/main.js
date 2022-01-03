@@ -9,11 +9,13 @@ import '../src/utils/flexiblle'
 import './assets/css/animate.min.css'
 import './element-variables.scss'
 import store from './store'
+import echartsfg from 'echartsfg'
 import echarts from 'echarts'
 import wow from 'wowjs'
 import 'echarts-liquidfill'
 
 Vue.prototype.$echarts = echarts
+Vue.prototype.$echartsfg = echartsfg
 Vue.prototype.$wow = wow
 Vue.prototype.axios = axios
 Vue.config.productionTip = false
