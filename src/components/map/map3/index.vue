@@ -64,6 +64,24 @@ export default {
         '黑龙江': [127.9688, 45.368],
         '台湾': [121.4648, 25.5630]
       }
+      var labelData = [
+        {name: '盐田港', value: 1, coords: [[114.237, 22.5571], [108.730871, 26.590591]]},
+        {
+          name: '大铲湾港',
+          value: 1,
+          coords: [[113.863247421228, 22.5312412021239], [112.599478, 17.057501]]
+        },
+        {
+          name: '深圳小漠港',
+          value: 1,
+          coords: [[115.043340287618, 22.7710296767815], [121.829747, 20.071286]]
+        },
+        {
+          name: '惠州荃湾港',
+          value: 1,
+          coords: [[114.567119501524, 22.6945041397154], [119.474893, 16.699333]]
+        },
+      ]
       var mapDate = []
       window.addEventListener('resize', this.drawechartmap)
       var myChart = this.$echarts.init(this.$refs.echarts)
@@ -343,7 +361,26 @@ export default {
             z: 999,
             data: [],
           },
-
+          {
+            type: 'lines',
+            data: labelData,
+            symbolSize: 5,
+            symbol: 'circle',
+            color: 'red',
+            label: {
+              show: true,
+              padding: [15, 15],
+              color: '#fff',
+              areaColor: 'red',
+              borderRadius: 6,
+              formatter: '{b}'
+            },
+            lineStyle: {
+              type: 'solid',
+              opacity: 1,
+              color: '#52E5EF'
+            }
+          }
         ]
       }
       myChart.resize()
