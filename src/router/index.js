@@ -195,6 +195,24 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/bdmap',
+      name: 'bdmap',
+      component: resolve => require(['@/views/bdmap/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/bdmap/:id',
+      name: 'bdmap',
+      component: resolve => require(['@/views/bdmap/page'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {

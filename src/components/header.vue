@@ -11,6 +11,7 @@
     <router-link to="/funnel">漏斗图</router-link>
     <router-link to="/liquidFill">水球图</router-link>
     <router-link to="/qita">其他</router-link>
+    <router-link to="/bdmap">百度地图</router-link>
     <a href="https://github.com/yelingkong/demoecharts" target="_blank" rel="nofollow noopener">github</a>
   </div>
 </template>
