@@ -7,3 +7,11 @@ export function demoechartsbdmap() {
     method: 'get',
   })
 }
+
+// 百度地图
+export function demoechartspaihang() {
+  return request({
+    url: '/mock/27/demoecharts/paihang',
+    method: 'get',
+  })
+}
