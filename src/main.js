@@ -18,17 +18,10 @@ import BaiduMap from 'vue-baidu-map'
 import '@/lib/createjs'
 import '@/lib/TweenMax'
 Vue.use(HighchartsVue)
-// import Highcharts from 'highcharts/highstock';
-// import HighchartsMore from 'highcharts/highcharts-more';
-// import HighchartsDrilldown from 'highcharts/modules/drilldown';
-// import Highcharts3D from 'highcharts/highcharts-3d';
-
 Vue.use(BaiduMap, {
   ak: 'hDQVARRkGAa7y20mcG1oZ5cgVanyvnwQ'
 })
-// HighchartsMore(Highcharts)
-// HighchartsDrilldown(Highcharts);
-// Highcharts3D(Highcharts);
+
 Vue.prototype.$echarts = echarts
 Vue.prototype.$echartsfg = echartsfg
 Vue.prototype.$wow = wow
