@@ -1,5 +1,6 @@
 <template>
   <div class="items">
+    <headers></headers>
     <item :title="$route.params.id">
       <component :is="dynamicCom"/>
     </item>
@@ -9,7 +10,7 @@
 <script>
 // 头部
 import item from "@/components/item";
-
+import headers from '@/components/header'
 export default {
   data() {
     return {
@@ -18,6 +19,7 @@ export default {
   },
   components: {
     item,
+    headers
   },
   created() {
     console.log(this.$route.params.id)

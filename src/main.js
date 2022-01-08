@@ -15,7 +15,8 @@ import wow from 'wowjs'
 import 'echarts-liquidfill'
 import HighchartsVue from 'highcharts-vue'
 import BaiduMap from 'vue-baidu-map'
-
+import '@/lib/createjs'
+import '@/lib/TweenMax'
 Vue.use(HighchartsVue)
 // import Highcharts from 'highcharts/highstock';
 // import HighchartsMore from 'highcharts/highcharts-more';
