@@ -399,4 +399,8 @@ body {
 .anchorBL {
   display: none !important;
 }
+
+a {
+  text-decoration: none;
+}
 </style>

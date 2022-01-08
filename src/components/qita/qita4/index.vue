@@ -5,7 +5,7 @@
 @Software : PhpStorm
 -->
 <template>
-  <div>
+  <div class="baozhabody">
     <div @click="showjingbao" class="baozha" :class="{bgs:show1}">
       <div class="baozha1" :class="{bgs:show2}">
         <div class="baozha2" :class="{bgs:show3}">
@@ -87,9 +87,6 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  position: fixed;
-  left: 300px;
-  top: 300px;
   flex-direction: row;
 
   .baozha1 {
@@ -118,5 +115,16 @@ export default {
       }
     }
   }
+}
+
+.baozhabody {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 </style>
