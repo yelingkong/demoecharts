@@ -159,6 +159,7 @@ export default {
 .echarts1 {
   position: relative;
   width: 100%;
+  color: #000;
   height: calc(100% - 80px);
   z-index: 1;
 }

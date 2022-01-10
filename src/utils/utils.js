@@ -164,6 +164,14 @@ export function hexToRgba(hex, opacity) {
   return rgbaColor
 }
 
+export function hexToRgba2(hex) {
+  let rgbaColor = ''
+  const reg = /^#[\da-f]{6}$/i
+  if (reg.test(hex)) {
+    rgbaColor = `rgba(${parseInt('0x' + hex.slice(1, 3))},${parseInt('0x' + hex.slice(3, 5))},${parseInt('0x' + hex.slice(5, 7))},1)`
+  }
+  return rgbaColor
+}
 export function FontChart(fontSize) {
   var whei = $(window).width()
   return (whei / 22) * fontSize / 100
