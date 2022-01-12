@@ -403,4 +403,8 @@ body {
 a {
   text-decoration: none;
 }
+
+.items {
+  position: relative;
+}
 </style>

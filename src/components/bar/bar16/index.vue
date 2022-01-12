@@ -86,7 +86,7 @@ export default {
                     c3: 'rgba(30, 93, 92, 0)',
                   }]
                 console.log(params)
-                return new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                return new that.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                   offset: 0,
                   color: colorList[params.dataIndex].c1
                 }, {
