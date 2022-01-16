@@ -1,6 +1,6 @@
 <template>
   <div class="items">
-    <headers></headers>
+<!--    <headers></headers>-->
     <item :title="$route.params.id">
       <component :is="dynamicCom"/>
     </item>
