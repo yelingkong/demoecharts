@@ -1,10 +1,11 @@
 <template>
-  <div class="bodymap" id="echartmap5"></div>
+  <div class="bodymap2" id="echartmap5"></div>
 </template>
 
 <script>
 import $ from 'jquery'
 import car from './images/car.png'
+import car2 from './images/car2.png'
 import icon_chuxing from './images/icon_chuxing.png'
 import Vue from 'vue'
 
@@ -22,9 +23,9 @@ export default {
       mapactive: 0,
       markers: [],
       list: [
-        [125.350472, 43.927952, "贵A123322"],
-        [125.385472, 43.887952, "贵A123322"],
-        [125.337472, 43.857952, "贵A123323"]
+        [125.350472, 43.927952, "贵A123322", 1],
+        [125.385472, 43.887952, "贵A123322", 0],
+        [125.337472, 43.857952, "贵A123323", 1]
       ]
     }
   },
@@ -62,16 +63,16 @@ export default {
         var marker = new AMap.Marker({
           map: that.map,
           position: path3[0],
-          icon: car,
-          offset: new AMap.Pixel(-25, -50),
-          autoRotation: false,
+          icon: car2,
+          offset: new AMap.Pixel(-25, -20),
+          autoRotation: true,
           angle: 0,
         });
 
         var markerContent = document.createElement("div");
         var markerImg = document.createElement("img");
         markerImg.className = "markerlnglat";
-        markerImg.src = car;
+        markerImg.src = car2;
         markerContent.appendChild(markerImg);
         var markerSpan = document.createElement("span");
         markerSpan.className = 'markerx';
@@ -108,7 +109,7 @@ export default {
           var markerContent = document.createElement("div");
           var markerImg = document.createElement("img");
           markerImg.className = "markerlnglat";
-          markerImg.src = car;
+          markerImg.src = car2;
           markerContent.appendChild(markerImg);
           var markerSpan = document.createElement("span");
           // markerSpan.className = 'markerx';
@@ -163,7 +164,7 @@ export default {
       that.getguiji()
       var listdata = that.list
       listdata.forEach((type) => {
-        that.addMarker(type[0], type[1], type[2])
+        that.addMarker(type[0], type[1], type[2], type[3])
       });
     },
     markerClick(e) {
@@ -207,12 +208,16 @@ export default {
       infoWindow.open(that.map, [e.lnglat.lng, e.lnglat.lat]);
       that.infoWindow = infoWindow;
     },
-    addMarker(x, y, obj) {
+    addMarker(x, y, obj, type) {
       let marker = null;
+      var type1 = '<div class="overlay"/>'
+      var type2 = `<div class="overlay2">
+<div class="info">${obj}</div>
+</div>`
       marker = new AMap.Marker({
         title: '运钞车',
         position: [x, y],
-        content: '<div class="overlay"/>',
+        content: type == 0 ? type1 : type2,
         offset: new AMap.Pixel(-13, -30)
       });
       marker.on('click', this.markerClick);
@@ -254,7 +259,7 @@ export default {
   position: relative;
 }
 
-.bodymap {
+.bodymap2 {
   width: 100%;
   height: 100%;
   position: relative;
@@ -304,9 +309,9 @@ export default {
 }
 
 .overlay {
-  background: url("./images/car.png");
-  width: 49px;
-  height: 36px;
+  background: url("./images/car2.png");
+  width: 51px;
+  height: 35px;
   background-size: 100% 100%;
   position: relative;
   color: #fff;
@@ -450,5 +455,33 @@ export default {
   height: 31px;
   background-size: 100% 100%;
   margin-left: 0px;
+}
+
+.overlay2 {
+  background: url("./images/icon_car2.png") no-repeat;
+  width: 87px;
+  height: 87px;
+  background-size: 100% 100%;
+  position: relative;
+
+  .info {
+    width: 90px;
+    height: 30px;
+    background: #081C44;
+    opacity: 1;
+    border: 1px solid #165586;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    font-size: 14px;
+    font-family: PingFang-SC-Bold, PingFang-SC;
+    font-weight: bold;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+  }
 }
 </style>
