@@ -407,4 +407,8 @@ a {
 .items {
   position: relative;
 }
+
+.colorwhite {
+  color: #fff;
+}
 </style>
