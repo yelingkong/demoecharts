@@ -262,11 +262,6 @@ body {
   color: #fff;
 }
 
-.el-dropdown-menu__item:hover {
-  color: #fff !important;
-  background: #1bc47c !important;
-}
-
 .popper__arrow {
   border-top-color: #17202b !important;
   display: none !important;
@@ -274,12 +269,6 @@ body {
 
 .el-message-box__title {
   color: #fff !important;
-}
-
-.el-button--primary {
-  color: #FFF;
-  background-color: #1bc47c !important;
-  border-color: #1bc47c !important;
 }
 
 .el-message-box {
