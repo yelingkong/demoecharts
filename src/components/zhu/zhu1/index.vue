@@ -1,11 +1,8 @@
 <template>
   <div class="echarts1" ref="echarts">
-
   </div>
 </template>
-
 <script>
-
 export default {
   name: 'echarts1',
   components: {},
@@ -27,7 +24,6 @@ export default {
   watch: {},
   mounted () {
     this.drawLine()
-
   },
   methods: {
     getactive () {

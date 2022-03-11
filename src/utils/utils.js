@@ -172,8 +172,10 @@ export function hexToRgba2(hex) {
   }
   return rgbaColor
 }
+
+// Echarts根据也可宽度动态调整
 export function FontChart(fontSize) {
-  var whei = $(window).width()
+  var whei = document.body.clientWidth
   return (whei / 22) * fontSize / 100
 }
 
@@ -200,6 +202,7 @@ export function ArrayMix(array) {
   return Math.min.apply(Math, array)
 }
 
+// 打开连接
 export function openLink(url, target) {
   var a = document.createElement('a')
   a.setAttribute('href', url)

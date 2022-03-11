@@ -17,8 +17,10 @@ npm run serve
 ```
 npm run build
 ```
+
 演示地址:https://www.wanjunshijie.com/echarts/#/
 
 ## 项目支持
 
+![jetbrains](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
 https://jb.gg/OpenSourceSupport
