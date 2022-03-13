@@ -37,6 +37,7 @@
     "vue-highcharts": "^0.2.0",
     "vue-router": "^3.0.1",
     "vue-router-auto": "^2.0.0",
+    "vue-seamless-scroll": "^1.1.23",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
