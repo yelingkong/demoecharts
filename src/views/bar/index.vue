@@ -26,7 +26,7 @@ export default {
     item,
   },
   created() {
-    const files = require.context('../../components/bar', true, /.vue$/).keys();
+    const files = require.context('../../components/bar', true, /index.vue$/).keys();
     console.log(files)
     files.forEach((type) => {
       this.comps.push(type.match(/.\/(\S*)\/index.vue/)[1])

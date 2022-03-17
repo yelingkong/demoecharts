@@ -25,6 +25,7 @@
     "html2canvas": "^1.4.1",
     "jquery": "^3.6.0",
     "lib-flexible": "^0.3.2",
+    "lodash": "^4.17.21",
     "mockjs": "^1.1.0",
     "moment": "^2.29.1",
     "postcss-pxtorem": "^5.1.1",
