@@ -213,6 +213,15 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/other/enumeratedValues',
+      name: 'other',
+      component: resolve => require(['@/views/other/enumeratedValues'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {
