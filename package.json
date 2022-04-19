@@ -11,6 +11,7 @@
   "dependencies": {
     "@antv/l7": "^2.6.33",
     "@antv/l7-maps": "^2.6.33",
+    "aos": "^3.0.0-beta.6",
     "axios": "^0.18.0",
     "core-js": "3.19.1",
     "crypto-js": "^4.0.0",

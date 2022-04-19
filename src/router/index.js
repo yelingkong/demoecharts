@@ -7,6 +7,14 @@ const router = new Router({
   base: '/',
   routes: [
     {
+      path: '/aos',
+      name: 'aos',
+      component: resolve => require(['@/views/aos/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    }, {
       path: '/bar',
       name: 'home',
       component: resolve => require(['@/views/bar/index'], resolve),
