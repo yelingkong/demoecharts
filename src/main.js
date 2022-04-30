@@ -17,6 +17,8 @@ import HighchartsVue from 'highcharts-vue'
 import BaiduMap from 'vue-baidu-map'
 import '@/lib/createjs'
 import '@/lib/TweenMax'
+import "@/utils/v-copy.js"
+
 Vue.use(HighchartsVue)
 Vue.use(BaiduMap, {
   ak: 'hDQVARRkGAa7y20mcG1oZ5cgVanyvnwQ'

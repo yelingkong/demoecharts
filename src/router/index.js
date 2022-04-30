@@ -230,6 +230,15 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/other/vcopy',
+      name: 'other',
+      component: resolve => require(['@/views/other/vcopy'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {

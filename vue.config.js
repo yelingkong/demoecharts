@@ -1,10 +1,28 @@
 'use strict'
+const path = require('path')
+var qiniuPrefix = require("./qiniu-upload-prefiex");
+const productionGzipExtensions = ['js', 'css']
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
 const webpack = require('webpack')
 module.exports = {
-  publicPath: '',
   runtimeCompiler: true,
-  productionSourceMap: false,
   lintOnSave: false,
+  productionSourceMap: false,
+  publicPath: qiniuPrefix.prefixhost + qiniuPrefix.prefix,
+  assetsDir: './',
+  chainWebpack(config) {
+    config.plugins.delete('preload')
+    config.plugins.delete('prefetch')
+  },
+  chainWebpack: config => {
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('tim', resolve('src/tim.js'))
+  },
   configureWebpack: {
     plugins: [
       new webpack.ProvidePlugin({

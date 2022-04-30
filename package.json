@@ -1,11 +1,11 @@
 {
-  "name": "yinhang",
+  "name": "demoecharts",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-qiniu": "vue-cli-service build && node qiniu.js",
+    "build-qiniu": "vue-cli-service build && node ./qiniu.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "mockjs": "^1.1.0",
     "moment": "^2.29.1",
     "postcss-pxtorem": "^5.1.1",
+    "qiniu": "^7.5.0",
     "qs": "^6.10.1",
     "quill": "^1.3.6",
     "vue": "^2.5.2",
