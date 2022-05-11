@@ -1,8 +1,8 @@
 <template>
-  <div class="full" @click="quanping">
-    <img v-if="a % 2 == 0" src="../assets/full.png" alt="">
+  <div className="full" @click="fullScreen">
+    <img v-if="a % 2 == 0" src="../../assets/full.png" alt="">
     <span v-if="a % 2 == 0">全屏</span>
-    <img v-if="a % 2 == 1" src="../assets/icon_exit.png" alt="">
+    <img v-if="a % 2 == 1" src="../../assets/icon_exit.png" alt="">
     <span v-if="a % 2 == 1">退出</span>
   </div>
 </template>
@@ -10,13 +10,13 @@
 <script>
 
 export default {
-  name: "full",
+  name: "fullScreen",
   components: {},
   props: {
     id: {
       type: String,
       default() {
-        return 'fullScreen';
+        return '';
       }
     }
   },
@@ -29,13 +29,13 @@ export default {
   mounted() {
   },
   methods: {
-    quanping() {
+    fullScreen() {
       this.a++
       this.a % 2 == 1 ? this.enterfullscreen() : this.exitfullscreen()
     },
     //控制全屏
     enterfullscreen() { //进入全屏
-      var docElm = document.getElementById(this.id)
+      var docElm = this.id ? document.getElementById(this.id) : document.documentElement
       //W3C
       if (docElm.requestFullscreen) {
         docElm.requestFullscreen()
