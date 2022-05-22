@@ -12,17 +12,17 @@ module.exports = {
   runtimeCompiler: true,
   lintOnSave: false,
   productionSourceMap: false,
-  publicPath: qiniuPrefix.prefixhost + qiniuPrefix.prefix,
+  publicPath: process.env.NODE_ENV === 'production' ? qiniuPrefix.prefixhost + qiniuPrefix.prefix : '',
   assetsDir: './',
   chainWebpack(config) {
     config.plugins.delete('preload')
     config.plugins.delete('prefetch')
   },
-  chainWebpack: config => {
-    config.resolve.alias
-      .set('@', resolve('src'))
-      .set('tim', resolve('src/tim.js'))
-  },
+  // chainWebpack: config => {
+  //   config.resolve.alias
+  //     .set('@', resolve('src'))
+  //     .set('tim', resolve('src/tim.js'))
+  // },
   configureWebpack: {
     plugins: [
       new webpack.ProvidePlugin({
