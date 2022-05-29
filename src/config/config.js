@@ -6,6 +6,14 @@ var configs = {
 	baseDown: 'http://47.245.35.40:5100/djkl/file/download/?path=',
 	piclink: 'http://47.245.35.40:5100/djkl/file/showPicture?path=',
   uploadByForm: 'http://47.245.35.40:5100/djkl/file/uploadByForm',
+  // 腾讯cos配置
+  appId: '', // 腾讯云appId
+  SecretId: '',
+  SecretKey: '',
+  uploadImg: '',
+  Bucket: '', // COS存储桶名称
+  Region: '', // COS地域
+  expires: 60 // 签名有效期(单位：秒)
 }
 
 export default configs
