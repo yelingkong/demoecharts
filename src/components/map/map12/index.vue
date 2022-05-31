@@ -9,7 +9,7 @@
 <script>
 import jiaxing from './map.json'
 import caiyaoimg from './assets/mapicon.png'
-import {FontChart} from "../../../utils/utils";
+import {FontChart} from "@/utils/utils";
 
 export default {
   name: 'echarts1',
@@ -58,60 +58,55 @@ export default {
       this.$echarts.registerMap('js', jiaxing)
       var mapdata = [
         {
-          name: '衢州市',
+          name: '孟州市',
           value: 100,
-          values: [118.868609,28.97504],
+          values: [112.788482,34.910993],
           img: caiyaoimg
         }, {
-          name: '舟山市',
+          name: '温县',
           value: 10,
-          values: [122.231092,29.98941],
+          values: [113.086854,34.938797],
           img: caiyaoimg
         }, {
 
-          name: '嘉兴市',
+          name: '沁阳市',
           value: 20,
-          values: [120.758087,30.760905],
+          values: [112.947455,35.080317],
           img: caiyaoimg
         }, {
-          name: '宁波市',
+          name: '博爱县',
           value: 100,
-          values: [121.630557,29.863062],
+          values: [113.068466,35.1766],
           img: caiyaoimg
         }, {
-          name: '台州市',
+          name: '中站区',
           value: 100,
-          values: [121.411047,28.655093],
+          values: [113.197786,35.205583],
           img: caiyaoimg
         }, {
-          name: '温州市',
+          name: '解放区',
           value: 20,
-          values: [120.707341,28.002107],
+          values: [113.237285,35.241357],
           img: caiyaoimg
         }, {
-          name: '丽水市',
+          name: '山阳区',
           value: 61,
-          values: [119.819475,28.315669],
+          values: [113.289521,35.250699],
           img: caiyaoimg
         }, {
-          name: '金华市',
+          name: '修武县',
           value: 61,
-          values: [119.660053,29.078074],
+          values: [113.454872,35.224369],
           img: caiyaoimg
         }, {
-          name: '杭州市',
+          name: '马村区',
           value: 61,
-          values: [119.575916,29.937614],
+          values: [113.33228,35.255057],
           img: caiyaoimg
         }, {
-          name: '湖州市',
+          name: '武陟县',
           value: 61,
-          values: [120.09883,30.890535],
-          img: caiyaoimg
-        }, {
-          name: '绍兴市',
-          value: 61,
-          values: [120.565589,29.916016],
+          values: [113.408681,35.10324],
           img: caiyaoimg
         }
       ]
