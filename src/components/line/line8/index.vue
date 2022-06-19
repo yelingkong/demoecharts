@@ -7,7 +7,8 @@
 <script>
 
 import moment from 'moment'
-import { FontChart } from '@/utils/utils'
+import {FontChart} from '@/utils/utils'
+import dian from './dian.png'
 
 export default {
   name: 'echarts1',
@@ -15,24 +16,24 @@ export default {
   props: {
     list: {
       type: Array,
-      default () {
+      default() {
         return []
       }
     }
   },
-  data () {
+  data() {
     return {}
   },
   watch: {
-    list () {
+    list() {
       this.drawLine()
     },
   },
-  mounted () {
+  mounted() {
     this.drawLine()
   },
   methods: {
-    drawLine () {
+    drawLine() {
       var that = this
       window.addEventListener('resize', this.drawLine)
       let myChart = this.$echarts.init(this.$refs.echarts)
@@ -123,9 +124,9 @@ export default {
           backgroundStyle: {
             color: 'rgba(245, 246, 250, 1)',
           },
-          symbol: 'circle', // 默认是空心圆（中间是白色的），改成实心圆
+          symbol: 'image://' + dian,
           showAllSymbol: false,
-          symbolSize: 3,
+          symbolSize: 20,
           lineStyle: {
             normal: {
               color: '#FBAE4A', // 线条颜色
