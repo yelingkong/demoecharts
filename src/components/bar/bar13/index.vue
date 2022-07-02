@@ -111,6 +111,7 @@ export default {
       myChart.clear()
       myChart.resize()
       myChart.setOption(option)
+      console.log(option)
     },
   }
 }
