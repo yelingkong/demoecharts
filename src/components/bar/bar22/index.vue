@@ -18,59 +18,46 @@ export default {
   mounted () {
     this.drawLine()
   },
+  computed: {
+    colorList: function () {
+      var list = [{
+        start: 'rgba(225, 183, 67, 1.00)',
+        end: 'rgba(169, 157, 118, 1.00)'
+      }, {
+        start: 'rgba(55, 137, 238, 1.00)',
+        end: 'rgba(114, 140, 173, 1.00)'
+      }, {
+        start: 'rgba(59, 233, 113, 1.00)',
+        end: 'rgba(114, 170, 136, 1.00)'
+      }, {
+        start: 'rgba(57, 236, 233, 1.00)',
+        end: 'rgba(117, 167, 168, 1.00)'
+      }, {
+        start: 'rgba(57, 236, 233, 1.00)',
+        end: 'rgba(117, 167, 168, 1.00)'
+      }]
+      var colorList = []
+      list.forEach((type) => {
+        var color = new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+          offset: 0,
+          color: type.start
+        },
+          {
+            offset: 1,
+            color: type.end
+          }
+        ])
+        colorList.push(color)
+      });
+      return colorList
+    }
+  },
   methods: {
     drawLine () {
       var that = this
       window.addEventListener('resize', this.drawLine)
       let myChart = this.$echarts.init(this.$refs.echarts1)
-      var legends = ['志愿者团队1', '志愿者团队2', '志愿者团队3', '志愿者团队4', '志愿者团队5']
-      var whei = $(window).width()
-      var colors1 = new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{
-        offset: 0,
-        color: 'rgba(103, 224, 130, 1)' // 0% 处的颜色
-      },
-        {
-          offset: 1,
-          color: 'rgba(103, 224, 130, 1)' // 100% 处的颜色
-        }
-      ])
-      var colors2 = new this.$echarts.graphic.LinearGradient(0, 1, 1, 0, [{
-        offset: 0,
-        color: 'rgba(115, 230, 191, 1)' // 0% 处的颜色
-      },
-        {
-          offset: 1,
-          color: 'rgba(0, 153, 113, 1)' // 100% 处的颜色
-        }
-      ])
-      var colors3 = new this.$echarts.graphic.LinearGradient(0, 1, 1, 0, [{
-        offset: 0,
-        color: 'rgba(93, 145, 250, 1)' // 0% 处的颜色
-      },
-        {
-          offset: 1,
-          color: 'rgba(122, 92, 250, 1)' // 100% 处的颜色
-        }
-      ])
-      var colors4 = new this.$echarts.graphic.LinearGradient(0, 1, 1, 0, [{
-        offset: 0,
-        color: 'rgba(75, 122, 250, 1)' // 0% 处的颜色
-      },
-        {
-          offset: 1,
-          color: 'rgba(49, 197, 222, 1)' // 100% 处的颜色
-        }
-      ])
-      var colors5 = new this.$echarts.graphic.LinearGradient(0, 1, 1, 0, [{
-        offset: 0,
-        color: 'rgba(48, 209, 173, 1)' // 0% 处的颜色
-      },
-        {
-          offset: 1,
-          color: 'rgba(19, 161, 230, 1)' // 100% 处的颜色
-        }
-      ])
-      var colors = [colors1, colors2, colors3, colors4, colors5]
+      var colors = this.colorList
       var data =
         [
           {
@@ -109,7 +96,6 @@ export default {
             color: '#fff',
             fontSize: FontChart(14)
           },
-          data: legends
         },
         tooltip: {
           trigger: 'item',

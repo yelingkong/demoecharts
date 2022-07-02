@@ -13,7 +13,6 @@ export default {
   created() {
 
   },
-
   mounted() {
     new this.$wow.WOW().init()
   },
@@ -353,6 +352,7 @@ body {
 .el-input {
   outline: none !important;
 }
+
 
 .el-select-dropdown__item.selected {
   color: #9DABBD !important;
