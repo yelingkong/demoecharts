@@ -76,7 +76,8 @@ export default {
             }
           }
         },
-        series: [{
+        series: [
+          {
           map: 'tjbh', //使用
           type: 'map',
           label: {
