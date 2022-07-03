@@ -47,12 +47,9 @@ export default {
                   fontSize: FontChart(12),
                   padding: [-20, 0, 0, 0],
                 },
-                // formatter: ['{c}'].join('\n'),
-                // formatter: ['{c}'] + ' : '['{}'],
                 formatter: function (params) {
                   var proportion = '';
                   for (var i = 0; i < option.series[0].data.length - 1; i++) {
-                    // console.log(option.series[0].data);
                     if (i === 0) {
                       proportion = proportion + option.series[0].data[i].value.toString();
                     } else {
@@ -93,7 +90,6 @@ export default {
               },
               {
                 value: getxb2,
-                // name: "女生",
                 itemStyle: {
                   normal: {
                     color: new this.$echarts.graphic.LinearGradient(

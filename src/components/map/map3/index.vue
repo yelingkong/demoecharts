@@ -387,8 +387,6 @@ export default {
       myChart.setOption(option)
       myChart.on('click', function (params) {
         var valarr = geoCoordMap[params.name]
-        console.log(valarr)
-        console.log(option.series[1])
         option.series[1].data = [{
           name: params.name,
           value: valarr,
@@ -402,8 +400,6 @@ export default {
         myChart.setOption(option, false)
       })
       myChart.on('dblclick', function (params) {
-        console.log('双击')
-        console.log(params)
         that.$refs.pops.getshow()
         myChart.setOption(option, false)
       })

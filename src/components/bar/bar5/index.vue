@@ -28,12 +28,6 @@ export default {
             fontSize: 22,
             fontWeight: "400",
           },
-          // subtext: "已处理数",
-          // subtextStyle: {
-          //   color: "rgba(150, 175, 220, 1)",
-          //   fontSize: 13,
-          //   fontWeight: "100",
-          // },
           itemGap: -10,
           left: "center",
           top: "center",

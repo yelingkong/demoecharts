@@ -53,76 +53,6 @@ export default {
               value: [116.837531, 38.061538, 250]
             }
           ]
-        }, {
-          name: '重载',
-          data: [
-            {//线路故障
-              name: '重载',
-              id: 5,
-              value: [117.099693, 38.295717, 250]
-            },
-            {//线路故障
-              name: '重载',
-              id: 6,
-              value: [116.448888, 38.203225, 250]
-            }
-          ]
-        }, {
-          name: '过载',
-          data: [
-            {//线路故障
-              name: '过载',
-              id: 7,
-              value: [116.214323, 38.623014, 250]
-            },
-            {//线路故障
-              name: '过载',
-              id: 8,
-              value: [116.133835, 38.673512, 250]
-            }
-          ]
-        }, {
-          name: '低电压',
-          data: [
-            {//线路故障
-              name: '低电压',
-              id: 9,
-              value: [116.320107, 37.970567, 250]
-            },
-            {//线路故障
-              name: '低电压',
-              id: 10,
-              value: [117.090494, 38.489383, 250]
-            }
-          ]
-        }, {
-          name: '停上电',
-          data: [
-            {//线路故障
-              name: '停上电',
-              id: 11,
-              value: [116.752444, 38.927258, 250]
-            },
-            {//线路故障
-              name: '停上电',
-              id: 12,
-              value: [117.371053, 38.056083, 250]
-            }
-          ]
-        }, {
-          name: '电采暖用户',
-          data: [
-            {//线路故障
-              name: '电采暖用户',
-              id: 13,
-              value: [116.812235, 38.738384, 250]
-            },
-            {//线路故障
-              name: '电采暖用户',
-              id: 14,
-              value: [117.52743, 38.574286, 250]
-            }
-          ]
         },
       ],
       time: null
@@ -596,7 +526,6 @@ export default {
         tooltip: {
           trigger: 'item',
           show: true,
-          // position: ['100%', '0%'],
           enterable: true,
           textStyle: {
             fontSize: 14,
@@ -635,19 +564,10 @@ export default {
               '                    </table>'
           }
         },
-        // legend: {
-        //     orient: 'vertical',
-        //     y: 'bottom',
-        //     x: '85%',
-        //     textStyle: {
-        //         color: '#fff'
-        //     }
-        // },
         visualMap: [{
           min: 0,
           max: 1000,
           show: true,
-          //   text: ['High', 'Low'],
           realtime: true,
           calculable: true,
           seriesIndex: [0],

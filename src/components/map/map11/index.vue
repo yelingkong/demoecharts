@@ -9,7 +9,7 @@
 <script>
 import jiaxing from './map.json'
 import caiyaoimg from './assets/mapicon.png'
-import {FontChart} from "../../../utils/utils";
+import {FontChart} from "@/utils/utils";
 
 export default {
   name: 'echarts1',

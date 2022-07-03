@@ -313,10 +313,7 @@ export default {
       myChart.setOption(option)
       myChart.on('click', function (params) {
         if (params.seriesType == 'scatter') {
-          console.log(params)
           that.active = params.data.active
-          that.$store.commit('bankid', params.data.id);
-          that.$store.commit('bankname', params.data.name);
           that.drawechartmap()
         }
       });

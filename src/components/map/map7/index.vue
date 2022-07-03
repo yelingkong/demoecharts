@@ -6,7 +6,6 @@
 
 <script>
 import map from './map.json'
-
 export default {
   name: 'echarts1',
   components: {},
@@ -93,7 +92,6 @@ export default {
               }
             }
           },
-
           itemStyle: {
             normal: {
               borderColor: 'rgba(14, 34, 150, 1.00)',
@@ -122,7 +120,6 @@ export default {
           },
           zoom: 1.2,
           roam: true,
-
         },
           //标记 图形 原点 scatter点 effectScatter涟漪特效
           {

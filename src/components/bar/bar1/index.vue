@@ -7,18 +7,11 @@
 <script>
 
 import {FontChart} from "@/utils/utils";
-
 export default {
   name: 'echarts1',
   components: {},
   data() {
     return {
-      status: '',
-      areaList: [],
-      outStocks: [],
-      stocks: [],
-      inStocks: [],
-      workDates: [],
       color: [
         'rgba(145, 203, 249, 1)',
         'rgba(66, 165, 245, 1)',
@@ -135,7 +128,6 @@ export default {
       ]
     }
   },
-  // computed: mapGetters(['companyid', 'startDate', 'endDate']),
   watch: {
     list() {
       this.drawLine()
@@ -174,15 +166,6 @@ export default {
         dataList.push(data)
       });
       var option = {
-        // title: {
-        //   text: '单位:%',
-        //   x: FontChart(20),
-        //   y: FontChart(20),
-        //   textStyle: {
-        //     color: "#fff",
-        //     fontSize: FontChart(16)
-        //   }
-        // },
         legend: {
           orient: 'vertical',
           top: 'center',
@@ -225,8 +208,6 @@ export default {
             },
             labelLine: {
               show: true,
-              // length: FontChart(40),
-              // length2: FontChart(10)
             },
             data: dataList
           },

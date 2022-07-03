@@ -13,7 +13,7 @@
 
 <script>
 
-import {FontChart} from '../../../utils/utils'
+import {FontChart} from '@/utils/utils'
 
 export default {
   name: 'echarts1',

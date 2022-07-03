@@ -45,7 +45,6 @@ export default {
         angleAxis: {
           max: 100,
           clockwise: true, // 逆时针
-          // 隐藏刻度线
           show: false
         },
         radiusAxis: {

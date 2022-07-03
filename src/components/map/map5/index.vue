@@ -6,7 +6,7 @@
 
 <script>
 import jiaxing from './map.json'
-import {openLink} from '../../../utils/utils'
+import {openLink} from '@/utils/utils'
 
 export default {
   name: 'echarts1',
