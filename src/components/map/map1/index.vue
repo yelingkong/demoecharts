@@ -6,11 +6,11 @@
 
 <script>
 import map from './map.json'
-import icon_mapimg1 from '../../../assets/icon_mapimg1.png'
-import icon_mapimg2 from '../../../assets/icon_mapimg2.png'
-import icon_mapimg3 from '../../../assets/icon_mapimg3.png'
-import icon_mapimg4 from '../../../assets/icon_mapimg4.png'
-import bank from '../../../data/bank.json'
+import icon_mapimg1 from './icon_mapimg1.png'
+import icon_mapimg2 from './icon_mapimg2.png'
+import icon_mapimg3 from './icon_mapimg3.png'
+import icon_mapimg4 from './icon_mapimg4.png'
+import bank from './bank.json'
 
 export default {
   name: 'echarts1',

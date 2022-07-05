@@ -1,107 +1,78 @@
-/**
-* @Author: 858834013@qq.com
-* @Name: index
-* @Date: 2022-05-31
-* @Desc:
-*/
 <template>
-  <div>
-    <div class="homemaincTop">
-      <div class="homemaincTopItem">
-        <p>全省平台数</p>
-        <div class="homemaincTopItemList">
-          <numcard :num="0"></numcard>
-          <numcard :num="9"></numcard>
-          <numcard :num="4"></numcard>
-        </div>
+  <div class="numcard">
+    <div class="numbinner" v-for="(item, index) in nums" :key="index">
+      <div v-if="item" class="numcardInner">
+        <num :num="item"></num>
       </div>
-      <div class="homemaincTopItem">
-        <p>服务企业数</p>
-        <div class="homemaincTopItemList">
-          <numcard :num="0"></numcard>
-          <numcard :num="7"></numcard>
-          <span>,</span>
-          <numcard :num="9"></numcard>
-          <numcard :num="0"></numcard>
-          <numcard :num="5"></numcard>
-        </div>
+      <div v-else-if="item==0" class="numcardInner">
+        <num :num="item"></num>
       </div>
-      <div class="homemaincTopItem">
-        <p>收集数</p>
-        <div class="homemaincTopItemList">
-          <numcard :num="1"></numcard>
-          <numcard :num="1"></numcard>
-          <span>,</span>
-          <numcard :num="0"></numcard>
-          <numcard :num="0"></numcard>
-          <numcard :num="0"></numcard>
-        </div>
-      </div>
+      <span v-else>,</span>
     </div>
   </div>
 </template>
 
 <script>
-import numcard from "./numcard";
+import num from "./numcard";
+import {formatNum} from "@/utils/utils";
+
 export default {
-  name: "index",
-  components: {numcard},
+  name: "numcard",
+  components: {num},
   props: {
-    id: {
-      type: String,
+    num: {
+      type: String | Number,
       default() {
-        return '';
+        return '5123';
       }
-    }
+    },
   },
-  data() {
-    return {
-      status: ''
+  computed: {
+    nums: function () {
+      var sNumber = formatNum(this.num).toString()
+      var data = []
+      for (var i = 0, len = sNumber.length; i < len; i += 1) {
+        data.push(+sNumber.charAt(i))
+      }
+      return data
     }
   },
   watch: {},
   mounted() {
+
   },
   methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
-.homemaincTop {
+.numcard {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: row;
-  align-content: flex-start;
-  width: 100%;
+  font-size: 36px;
+  font-family: DIN;
+  font-weight: bold;
+  color: #FFFFFF;
 
-  .homemaincTopItem {
-    margin-right: 70px;
-
-    p {
-      font-size: 16px;
-      font-family: PingFang;
-      font-weight: 500;
-      color: #FFFFFF;
-    }
-
-    .homemaincTopItemList {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-wrap: nowrap;
-      flex-direction: row;
-      align-content: flex-start;
-      margin-top: 14px;
-
-      span {
-        font-size: 38px;
-        font-family: QuartzEF;
-        font-weight: 400;
-        color: #FFFFFF;
-      }
-    }
+  span {
+    font-size: 30px;
+    font-family: DIN;
+    font-weight: bold;
   }
 }
+
+.numbinner {
+  margin-right: 3px;
+  margin-left: 3px;
+  margin-top: 10px;
+}
+
+.numbinner:first-child {
+  margin-left: 0;
+}
+
+
 </style>
