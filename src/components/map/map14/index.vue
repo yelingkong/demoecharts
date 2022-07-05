@@ -1,7 +1,19 @@
 <template>
   <div class="echarts1">
     <div class="echarts1" ref="echarts">
-
+    </div>
+    <div class="popWin wow fadeInLeft" data-wow-delay="1s">
+      <div class="title">南充阆中市</div>
+      <div class="popWinBody">
+        <div class="popWinBodylist">
+          <span></span>
+          <p>在招岗位数：153个</p>
+        </div>
+        <div class="popWinBodylist">
+          <span></span>
+          <p>在招岗位数：153个</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -57,62 +69,36 @@ export default {
       this.$echarts.registerMap('js', jiaxing)
       var mapdata = [
         {
-          name: '衢州市',
-          value: 100,
-          values: [118.868609,28.97504],
-          img: caiyaoimg
-        }, {
-          name: '舟山市',
-          value: 10,
-          values: [122.231092,29.98941],
-          img: caiyaoimg
-        }, {
-
-          name: '嘉兴市',
-          value: 20,
-          values: [120.758087,30.760905],
-          img: caiyaoimg
-        }, {
-          name: '宁波市',
-          value: 100,
-          values: [121.630557,29.863062],
-          img: caiyaoimg
-        }, {
-          name: '台州市',
-          value: 100,
-          values: [121.411047,28.655093],
-          img: caiyaoimg
-        }, {
-          name: '温州市',
-          value: 20,
-          values: [120.707341,28.002107],
-          img: caiyaoimg
-        }, {
-          name: '丽水市',
+          name: '新疆',
           value: 61,
-          values: [119.819475,28.315669],
+          values: [87.609329, 43.810062],
           img: caiyaoimg
         }, {
-          name: '金华市',
+          name: '阆中市',
           value: 61,
-          values: [119.660053,29.078074],
+          values: [106.010416, 31.573427],
           img: caiyaoimg
         }, {
-          name: '杭州市',
+          name: '西藏',
           value: 61,
-          values: [119.575916,29.937614],
+          values: [91.127219, 29.64737],
           img: caiyaoimg
         }, {
-          name: '湖州市',
+          name: '福建',
           value: 61,
-          values: [120.09883,30.890535],
+          values: [119.328317, 26.080901],
           img: caiyaoimg
         }, {
-          name: '绍兴市',
+          name: '浙江',
           value: 61,
-          values: [120.565589,29.916016],
+          values: [120.187708, 30.268056],
           img: caiyaoimg
-        }
+        }, {
+          name: '辽宁',
+          value: 61,
+          values: [123.452267, 41.820396],
+          img: caiyaoimg
+        },
       ]
       var data2 = []
       mapdata.forEach((type) => {
@@ -121,9 +107,9 @@ export default {
           coordinateSystem: 'geo',
           label: {
             normal: {
-              show: true,
+              show: false,
               position: 'top',
-              offset: [0, FontChart(57)],
+              offset: [0, FontChart(32)],
               formatter: function (params) {
                 var text = `{fline|${params.name}}`
                 return text
@@ -139,7 +125,7 @@ export default {
               },
             },
             emphasis: {
-              show: true,
+              show: false,
               position: 'top',
               offset: [0, FontChart(62)],
               formatter: function (params) {
@@ -164,7 +150,7 @@ export default {
           symbol: function (value, params) {
             return 'image://' + type.img
           },
-          symbolSize: [FontChart(60), FontChart(55)],
+          symbolSize: [FontChart(32), FontChart(32)],
           symbolOffset: [-0, -0],
           z: 999,
           data: [{
@@ -175,6 +161,31 @@ export default {
         }
         data2.push(datas)
       })
+      var fData = []
+      var geoCoordMap = {
+        '阆中市': [106.010416, 31.573427],
+        '新疆': [87.609329, 43.810062],
+        '西藏': [91.127219, 29.64737],
+        '福建': [119.328317, 26.080901],
+        '浙江': [120.187708, 30.268056],
+        '辽宁': [123.452267, 41.820396],
+      }
+      for (var key in geoCoordMap) {
+        for (var key1 in geoCoordMap) {
+          if (key1 != key) {
+            fData.push({
+              coords: [
+                geoCoordMap[key],
+                geoCoordMap[key1],
+              ],
+              fromName: key,
+              toName: key1,
+            })
+            break
+          }
+        }
+      }
+      fData.splice(0, 1)
       var option = {
         visualMap: {
           show: false,
@@ -307,40 +318,61 @@ export default {
             }
           },
           {
+            type: 'lines',
+            zlevel: 10000,
+            effect: {
+              show: true,
+              period: 4, //箭头指向速度，值越小速度越快
+              trailLength: 0.1, //特效尾迹长度[0,1]值越大，尾迹越长重
+              symbol: 'arrow', //箭头图标
+              symbolSize: 4, //图标大小
+            },
+            tooltip: {
+              trigger: 'item',
+            },
+            label: {
+              show: false,
+              color: '#fff',
+              emphasis: {
+                color: 'white',
+                show: true
+              }
+            },
+            lineStyle: {
+              normal: {
+                color: '#23c1dc',
+                type: 'dashed',
+                width: 0.5, //尾迹线条宽度
+                opacity: 0.5, //尾迹线条透明度
+                curveness: 0.3 //尾迹线条曲直度
+              }
+            },
+            data: fData,
+          },
+          {
             type: 'map',
             mapType: 'js',
             geoIndex: -1,
             zoom: 1.1, //默认显示级别
             label: {
-              show: false,
-              color: 'rgba(13, 38, 77, 1)',
+              show: true,
+              color: '#aad0ff',
               emphasis: {
                 color: 'white',
-                show: false
+                show: true
               }
             },
             itemStyle: {
               normal: {
+                areaColor: '#0e349a',
+                shadowColor: '#0a399b',
                 borderColor: '#2768d3',
                 borderWidth: 2
               },
               emphasis: {
-                areaColor: {
-                  type: 'radial',
-                  x: 0.5,
-                  y: 0.5,
-                  r: 1,
-                  colorStops: [{
-                    offset: 0,
-                    color: '#00BCFF' // 0% 处的颜色
-                  }, {
-                    offset: 1,
-                    color: '#00BCFF' // 100% 处的颜色
-                  }],
-                  globalCoord: false // 缺省为 false
-                },
+                areaColor: '#012397',
                 borderWidth: 0,
-                color: 'green'
+                color: '#fff'
               }
             },
             data: mapdata
@@ -363,7 +395,65 @@ export default {
 .echarts1 {
   position: relative;
   width: 100%;
-  height: calc(100% - 0px);
+  height: calc(100% - 30px);
   z-index: 1;
+}
+
+.popWin {
+  background: url("./assets/popbg.png") no-repeat;
+  width: 193px;
+  height: 144px;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+
+  .title {
+    font-size: 18px;
+    font-family: MicrosoftYaHei;
+    font-weight: bold;
+    color: #19E1FF;
+    padding-left: 16px;
+    padding-top: 19px;
+  }
+
+  .popWinBody {
+    background: url("./assets/popbg2.png") no-repeat;
+    width: 161px;
+    height: 69px;
+    margin-top: 16px;
+    margin-left: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: flex-start;
+
+    .popWinBodylist {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      align-content: flex-start;
+
+      span {
+        width: 8px;
+        height: 8px;
+        background: #4EE2FE;
+        border-radius: 50%;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      p {
+        font-size: 14px;
+        font-family: MicrosoftYaHei;
+        font-weight: 400;
+        color: #FFFFFF;
+      }
+    }
+  }
 }
 </style>

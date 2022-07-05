@@ -306,7 +306,7 @@ export default {
             },
             data: fData,
           },
-          ...serverdata
+          ...serverdata,
         ],
       };
       myChart.resize()
