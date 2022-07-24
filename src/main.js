@@ -18,6 +18,7 @@ import BaiduMap from 'vue-baidu-map'
 import '@/lib/createjs'
 import '@/lib/TweenMax'
 import "@/utils/v-copy.js"
+import ba from 'vue-ba'
 
 Vue.use(HighchartsVue)
 Vue.use(BaiduMap, {
@@ -31,6 +32,7 @@ Vue.prototype.axios = axios
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
+Vue.use(ba, '419e3567eb6e054cc88680218c1f39fd')
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })

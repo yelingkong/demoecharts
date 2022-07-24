@@ -84,7 +84,7 @@ export default {
       var option = {
         color: colors,
         title: {
-          text: '项目\n组成',
+          text: '',
           top: 'middle',
           left: 'center',
           textStyle: {
