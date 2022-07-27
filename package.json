@@ -16,6 +16,7 @@
     "core-js": "3.19.1",
     "crypto-js": "^4.0.0",
     "echarts": "^4.9.0",
+    "echarts-gl": "^1.1.2",
     "echarts-liquidfill": "^2.0.6",
     "echarts-wordcloud": "^2.0.0",
     "echartsfg": "git+https://gitee.com/yelingkong/echarts-faguang.git",
