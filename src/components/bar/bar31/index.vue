@@ -175,7 +175,18 @@ export default {
           formatter: '',
         },
         tooltip: {
-          show: false
+          show: true,
+          formatter: function (params) {
+            console.log(params)
+            var data = that.optionData
+            var data2 = ""
+            data.forEach((type) => {
+              if (type.name == params.seriesName) {
+                data2 = params.seriesName + ':' + type.value;
+              }
+            });
+            return data2;
+          }
         },
         xAxis3D: {
           min: -1,
