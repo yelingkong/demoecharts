@@ -1,6 +1,6 @@
 <template>
   <div class="numCard">
-    <span class="number">{{ num }}</span>
+    <span class="number" v-if="show">{{ num }}</span>
   </div>
 </template>
 
@@ -21,10 +21,18 @@ export default {
   },
   data() {
     return {
-      status: ''
+      show: true
     }
   },
-  watch: {},
+  watch: {
+    num() {
+      this.show = false
+      this.$nextTick(() => {
+        this.show = true
+        $('.number4').leoTextAnimate({delay: 2000, speed: 3000, autorun: true, fixed: [',', ':', '.'], start: '-'})
+      })
+    },
+  },
   mounted() {
     $('.number').leoTextAnimate({delay: 2000, speed: 3000, autorun: true, fixed: [',', ':', '.'], start: '-'});
   },
