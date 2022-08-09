@@ -58,6 +58,23 @@ const router = new Router({
         requiresAuth: true,
         showPage: true
       }
+    }, {
+      path: '/Highcharts',
+      name: 'home',
+      component: resolve => require(['@/views/Highcharts/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/Highcharts/:id',
+      name: 'home',
+      component: resolve => require(['@/views/Highcharts/page'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
     },
     {
       path: '/line',

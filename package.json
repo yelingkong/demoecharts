@@ -22,7 +22,7 @@
     "echartsfg": "git+https://gitee.com/yelingkong/echarts-faguang.git",
     "element-ui": "^2.15.2",
     "file-saver": "^2.0.5",
-    "highcharts": "^9.3.2",
+    "highcharts": "^10.1.0",
     "highcharts-vue": "^1.4.0",
     "html2canvas": "^1.4.1",
     "jquery": "^3.6.0",

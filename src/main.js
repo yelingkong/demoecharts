@@ -13,18 +13,20 @@ import echartsfg from 'echartsfg'
 import echarts from 'echarts'
 import wow from 'wowjs'
 import 'echarts-liquidfill'
-import HighchartsVue from 'highcharts-vue'
+
 import BaiduMap from 'vue-baidu-map'
 import '@/lib/createjs'
 import '@/lib/TweenMax'
 import "@/utils/v-copy.js"
 import ba from 'vue-ba'
 
-Vue.use(HighchartsVue)
+import highcharts from 'highcharts'
+import highcharts3d from 'highcharts/highcharts-3d'
+highcharts3d(highcharts)
+Vue.use(highcharts)
 Vue.use(BaiduMap, {
   ak: 'hDQVARRkGAa7y20mcG1oZ5cgVanyvnwQ'
 })
-
 Vue.prototype.$echarts = echarts
 Vue.prototype.$echartsfg = echartsfg
 Vue.prototype.$wow = wow
