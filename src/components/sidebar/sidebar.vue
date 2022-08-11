@@ -108,6 +108,16 @@ export default {
             },
           ]
         },
+        {
+          title: '动画',
+          url: '2',
+          children: [
+            {
+              title: 'lottieWeb',
+              url: '/lottieweb'
+            },
+          ]
+        },
       ]
     }
   },

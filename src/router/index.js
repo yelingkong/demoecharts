@@ -265,6 +265,24 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/lottieweb',
+      name: 'lottieweb',
+      component: resolve => require(['@/views/lottieweb/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/lottieweb/:id',
+      name: 'lottieweb',
+      component: resolve => require(['@/views/lottieweb/page'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {
