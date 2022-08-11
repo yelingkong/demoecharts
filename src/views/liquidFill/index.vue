@@ -1,6 +1,7 @@
 <template>
   <div class="homebody">
-    <headers></headers>
+    <div class="homebodys">
+      <sidebar :openeds="['0']" active="/liquidFill"></sidebar>
     <div class="homemain">
       <div class="items" v-for="(app,index) in comps" :key="index">
         <item :title="app" :link="'/liquidFill/'+app">
@@ -9,11 +10,14 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 import headers from "../../components/header";
 import item from "../../components/item";
+import sidebar from "@/components/sidebar/sidebar";
+
 export default {
   data() {
     return {
@@ -24,6 +28,7 @@ export default {
   components: {
     headers,
     item,
+    sidebar
   },
   created() {
     const files = require.context('../../components/liquidFill', true, /.vue$/).keys();

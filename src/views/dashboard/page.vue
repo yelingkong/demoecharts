@@ -1,9 +1,14 @@
 <template>
-  <div class="items">
-<!--    <headers></headers>-->
-    <item :title="$route.params.id">
-      <component :is="dynamicCom"/>
-    </item>
+  <div class="homebody">
+    <div class="homebodys">
+      <sidebar :openeds="['0']" active="/dashboard"></sidebar>
+      <div class="items">
+        <!--    <headers></headers>-->
+        <item :title="$route.params.id">
+          <component :is="dynamicCom"/>
+        </item>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,6 +16,7 @@
 // 头部
 import item from "@/components/item";
 import headers from '@/components/header'
+import sidebar from "@/components/sidebar/sidebar";
 
 export default {
   data() {
@@ -20,7 +26,8 @@ export default {
   },
   components: {
     item,
-    headers
+    headers,
+    sidebar
   },
   created() {
     console.log(this.$route.params.id)

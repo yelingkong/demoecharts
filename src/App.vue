@@ -194,7 +194,7 @@ body {
 
 .scroll::-webkit-scrollbar {
   width: 5px;
-  height: 100%;
+  height: 5px;
 }
 
 /*滚动条滑块*/
@@ -380,5 +380,55 @@ a {
 
 .mb20 {
   margin-bottom: 20px !important;
+}
+
+.homebodys {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: flex-start;
+
+  & > .items {
+    width: calc(100% - 200px) !important;
+    position: relative !important;
+  }
+}
+
+.homemain {
+  width: calc(100% - 200px) !important;
+  height: 100%;
+  overflow-y: scroll;
+  margin-top: 0 !important;
+}
+
+//火狐浏览器
+.homemain {
+  scrollbar-width: 'auto'; //只有 auto、thin、none
+  scrollbar-color: #368dff #2652bd; /* 第一个颜色为滚动条的颜色， 第二个颜色为滚动条轨道的颜色 */
+}
+
+//火狐浏览器
+//谷歌浏览器
+.homemain::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/*滚动条滑块*/
+.homemain::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+  background: #4fa6e7;
+}
+
+/*滚动条轨道*/
+.homemain::-webkit-scrollbar-track { /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
 }
 </style>

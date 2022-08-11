@@ -1,11 +1,13 @@
 <template>
   <div class="homebody">
-    <headers></headers>
-    <div class="homemain">
-      <div class="items" v-for="(app,index) in comps" :key="index">
-        <item :title="app" :link="'/Highcharts/'+app">
-          <component :is="dynamicCom[index]"></component>
-        </item>
+    <div class="homebodys">
+      <sidebar :openeds="['0']" active="/Highcharts"></sidebar>
+      <div class="homemain">
+        <div class="items" v-for="(app,index) in comps" :key="index">
+          <item :title="app" :link="'/Highcharts/'+app">
+            <component :is="dynamicCom[index]"></component>
+          </item>
+        </div>
       </div>
     </div>
   </div>
@@ -14,6 +16,8 @@
 <script>
 import headers from "../../components/header";
 import item from "../../components/item";
+import sidebar from "@/components/sidebar/sidebar";
+
 export default {
   data() {
     return {
@@ -24,6 +28,7 @@ export default {
   components: {
     headers,
     item,
+    sidebar
   },
   created() {
     const files = require.context('../../components/Highcharts', true, /.vue$/).keys();

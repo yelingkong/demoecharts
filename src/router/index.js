@@ -33,6 +33,15 @@ const router = new Router({
       }
     },
     {
+      path: '/pie',
+      name: 'pie',
+      component: resolve => require(['@/views/bar/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
       path: '/bar/:id',
       name: 'home',
       component: resolve => require(['@/views/bar/page'], resolve),
