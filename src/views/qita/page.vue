@@ -1,7 +1,7 @@
 <template>
   <div class="homebody">
     <div class="homebodys">
-      <sidebar :openeds="['0']" active="/qita"></sidebar>
+      <sidebar :openeds="['3']" active="/qita"></sidebar>
       <div class="items">
         <!--    <headers></headers>-->
         <item :title="$route.params.id">

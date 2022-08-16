@@ -4,3 +4,4 @@ var url1 = '//mock.wanjunshijie.com'
 var url2 = '//mock.wanjunshijie.com'
 var ip = process.env.NODE_ENV === 'production' ? url1 + "/" : url2 + "/"
 export const devIp = ip
+export const switchTime = 5000

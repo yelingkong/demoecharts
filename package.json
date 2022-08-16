@@ -13,6 +13,7 @@
     "@antv/l7-maps": "^2.6.33",
     "aos": "^3.0.0-beta.6",
     "axios": "^0.18.0",
+    "better-scroll": "^2.4.2",
     "core-js": "3.19.1",
     "crypto-js": "^4.0.0",
     "echarts": "^4.9.0",

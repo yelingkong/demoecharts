@@ -1,19 +1,22 @@
 <template>
-  <div class="numcard">
-    <div class="numbinner" v-for="(item, index) in nums" :key="index">
-      <div v-if="item" class="numcardInner">
-        <num :num="item"></num>
+  <div>
+    <p class="desc">数字滚动</p>
+    <div class="numcard">
+      <div class="numbinner" v-for="(item, index) in nums" :key="index">
+        <div v-if="item" class="numcardInner">
+          <num :num="item"></num>
+        </div>
+        <div v-else-if="item==0" class="numcardInner">
+          <num :num="item"></num>
+        </div>
+        <span v-else>,</span>
       </div>
-      <div v-else-if="item==0" class="numcardInner">
-        <num :num="item"></num>
-      </div>
-      <span v-else>,</span>
     </div>
   </div>
 </template>
 
 <script>
-import num from "./numcard";
+import num from "./components/numcard";
 import {formatNum} from "@/utils/utils";
 
 export default {

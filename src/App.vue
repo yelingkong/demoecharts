@@ -431,4 +431,10 @@ a {
   border-radius: 10px;
   background: rgba(0, 0, 0, 0);
 }
+
+.desc {
+  color: #fff;
+  font-size: 16px;
+  padding-top: 50px;
+}
 </style>

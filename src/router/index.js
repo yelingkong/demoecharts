@@ -283,6 +283,24 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/widget',
+      name: 'widget',
+      component: resolve => require(['@/views/widget/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
+    {
+      path: '/widget/:id',
+      name: 'widget',
+      component: resolve => require(['@/views/widget/page'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {

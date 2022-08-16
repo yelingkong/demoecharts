@@ -85,10 +85,6 @@ export default {
               url: '/liquidFill'
             },
             {
-              title: '其他',
-              url: '/qita'
-            },
-            {
               title: 'Highcharts',
               url: '/Highcharts'
             },
@@ -115,6 +111,20 @@ export default {
             {
               title: 'lottieWeb',
               url: '/lottieweb'
+            },
+          ]
+        },
+        {
+          title: '常用组件',
+          url: '3',
+          children: [
+            {
+              title: 'widget',
+              url: '/widget'
+            },
+            {
+              title: '其他',
+              url: '/qita'
             },
           ]
         },

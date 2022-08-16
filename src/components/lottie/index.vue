@@ -1,8 +1,8 @@
 /**
 * @Author: 858834013@qq.com
-* @Name: index
-* @Date: 2022-08-06
-* @Desc:
+* @Name: lottie
+* @Date: 2022-08-13
+* @Desc: lottie封装
 */
 <template>
   <div ref="lottie" class="lottie">
@@ -19,6 +19,10 @@ export default {
       type: Number,
       value: 100
     },
+    status: {
+      type: Boolean,
+      value: false
+    },
     canvasId: {
       type: String,
       default: 'canvasId'
@@ -32,7 +36,7 @@ export default {
       value: 'svg'
     },
     path: {
-      type: String,
+      type: String | Object,
       observer: function observer() {
         this.init();
       }
@@ -42,9 +46,7 @@ export default {
     this.intLottie();
   },
   data() {
-    return {
-      show: true
-    }
+    return {}
   },
   methods: {
     intLottie() {

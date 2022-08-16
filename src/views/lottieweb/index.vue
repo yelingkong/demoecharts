@@ -1,7 +1,7 @@
 <template>
   <div class="homebody">
     <div class="homebodys">
-      <sidebar :openeds="['2']" active="/lottieWeb"></sidebar>
+      <sidebar :openeds="['2']" active="/lottieweb"></sidebar>
     <div class="homemain">
       <div class="items" v-for="(app,index) in comps" :key="index">
         <item :title="app" :link="'/lottieweb/'+app">
