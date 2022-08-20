@@ -1,21 +1,19 @@
 <template>
   <div>
-    <div class="desc">收藏效果</div>
+    <div class="desc">爆炸效果</div>
     <div class="lottie">
-      <lottie2 :path="data"></lottie2>
-      <lottie :status.sync="status" :path="data"></lottie>
+      <lottie :path="data"></lottie>
     </div>
   </div>
 </template>
 
 <script>
-import lottie from "../../lottie/star/lottie";
-import lottie2 from "../../lottie";
+import lottie from "../../lottie";
 import data from './data.json'
 
 export default {
   name: 'lottieWeb3',
-  components: {lottie, lottie2},
+  components: {lottie},
   props: {
     id: {
       type: String,

@@ -1,7 +1,10 @@
 <template>
-  <div class="lottie">
-    <lottie2 :path="data"></lottie2>
-    <lottie :status.sync="status" :path="data"></lottie>
+  <div>
+    <div class="desc">收藏效果</div>
+    <div class="lottie">
+      <lottie2 :path="data"></lottie2>
+      <lottie :status.sync="status" :path="data"></lottie>
+    </div>
   </div>
 </template>
 

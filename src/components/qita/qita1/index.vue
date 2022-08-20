@@ -1,12 +1,15 @@
 <template>
-  <div class="centerpr">
-    <div class="centerprs">
-      <p :style="{background:item.bg,width:item.percentage+'%'}"
-         v-for="(item,index) in list2"
-         :key="index">
-        <span :class="'label'+index">{{ item.label }}</span>
-        <span :class="'percentage'+index">{{ item.percentage }}%</span>
-      </p>
+  <div>
+    <div class="desc">一个进度条效果</div>
+    <div class="centerpr">
+      <div class="centerprs">
+        <p :style="{background:item.bg,width:item.percentage+'%'}"
+           v-for="(item,index) in list2"
+           :key="index">
+          <span :class="'label'+index">{{ item.label }}</span>
+          <span :class="'percentage'+index">{{ item.percentage }}%</span>
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -33,7 +36,7 @@ export default {
   data() {
     return {
       list: [
-        {label: '已处置', value: 20, bg: 'rgba(13, 250, 238, 1)'},
+        {label: '已处置', value: 10, bg: 'rgba(13, 250, 238, 1)'},
         {label: '未处置', value: 40, bg: 'rgba(1, 125, 255, 1)'},
       ],
     }
@@ -43,8 +46,6 @@ export default {
     list2: function () {
       let total = 0
       var list2 = this.list;
-      // this.list[0].value = this.numclose
-      // this.list[1].value = this.num - this.numclose
       var list = []
       this.list.forEach((type) => {
         total = total + type.value

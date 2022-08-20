@@ -5,7 +5,10 @@
 * @Desc: 导出文档
 */
 <template>
-  <div class="newButton">
+  <div>
+    <div class="desc">
+      将JSON数据导出为Excel
+    </div>
     <exportExcel :t-header="header" :key-val="keyVal" :list="list" file-name="导出demo">
       <el-button type="primary">导出Excel</el-button>
     </exportExcel>
@@ -41,14 +44,3 @@ export default {
   methods: {},
 }
 </script>
-
-<style lang="less">
-.newButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  padding-top: 200px;
-}
-</style>

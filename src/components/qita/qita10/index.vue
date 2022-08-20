@@ -6,6 +6,7 @@
 */
 <template>
   <div class="Home">
+    <div class="desc">element ui实现换肤功能</div>
     <div class="pageMain">
       <div class="listInfo">
         <div v-for="(item,index) in themeList" :key="index" @click="changeSkin(item)">
@@ -93,7 +94,6 @@ export default {
   width: 100%;
   height: calc(100% - 0px);
   position: relative;
-  padding-top: 50px;
 
   .listInfo {
     display: flex;
