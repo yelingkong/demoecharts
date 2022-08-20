@@ -8,7 +8,7 @@
   <div>
     <div class="exportDocument" ref="exportDocument">
     </div>
-    <div class="buttonss">
+    <div class="newButton">
       <el-button @click="saveWord" type="primary">导出word</el-button>
     </div>
   </div>
@@ -21,7 +21,7 @@ import fileSaver from 'file-saver'
 import {MyDoc} from './utils/mydoc'
 
 export default {
-  name: "downword",
+  name: "exportDocument",
   data: function () {
     return {
       list: [
@@ -66,13 +66,10 @@ export default {
 
 <style lang="less">
 .exportDocument {
-  background: #0F75C1;
-  width: 100%;
-  height: 100%;
-  min-height: 100px;
+
 }
 
-.buttonss {
+.newButton {
   display: flex;
   justify-content: center;
   align-items: center;
