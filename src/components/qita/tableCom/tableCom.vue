@@ -14,7 +14,7 @@
       </thead>
       <tbody>
       <tr v-for="(item,index) in list" :key="index">
-        <td v-for="(itemK,indexK) in keyVal" :key="indexK"><span>{{ item[itemK] }}</span></td>
+        <td v-for="(itemK,indexK) in keyVal" :key="indexK"><span v-html="item[itemK]"></span></td>
       </tr>
       </tbody>
     </table>
@@ -76,6 +76,7 @@ export default {
       flex-direction: row;
       align-content: flex-start;
       padding-left: 30px;
+      line-height: 30px;
     }
   }
 
