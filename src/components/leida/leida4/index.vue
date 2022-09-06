@@ -6,7 +6,7 @@
 
 <script>
 
-import {FontChart} from "@/utils/utils";
+import {FontChart} from "../../../utils/utils";
 
 export default {
   name: 'echarts1',
@@ -20,8 +20,7 @@ export default {
     }
   },
   data() {
-    return {
-    }
+    return {}
   },
   mounted() {
     this.drawLine()
@@ -30,12 +29,13 @@ export default {
     drawLine() {
       var that = this
       var indicator = [
-        {name: '案防', max: 500},
-        {name: '运营', max: 500},
-        {name: '安防', max: 500},
-        {name: '营销', max: 500},
+        {name: '增值税额', max: 3183},
+        {name: '盈利率', max: 3183},
+        {name: '企业所得税利润', max: 3183},
+        {name: '企业所得税营收', max: 3183},
+        {name: '合同额', max: 3183},
       ]
-      var dataValue = [30, 400, 300, 400]
+      var dataValue = [800, 1583, 318, 1000, 1400]
       window.addEventListener('resize', this.drawLine)
       let myChart = this.$echarts.init(this.$refs.echarts)
 
@@ -51,59 +51,58 @@ export default {
 
       var option = {
         radar: {
-          radius: '55%',
+          radius: '75%',
           center: ['50%', '50%'],
-          startAngle: 0,
+          startAngle: 90,
           triggerEvent: true,
           name: {
             textStyle: {
               rich: {
                 a: {
-                  color: 'rgba(190, 198, 218, 1)',
-                  fontSize: FontChart(16),
+                  color: '#fff',
+                  fontSize: FontChart(14),
                   padding: [0, 0],
-                  lineHeight: FontChart(20),
                 },
                 b: {
-                  color: 'rgba(255, 255, 255, 1)',
-                  fontSize: FontChart(20),
-                  padding: [0, 0],
-                  lineHeight: FontChart(20),
+                  color: '#7BDEFF',
+                  fontSize: FontChart(14),
+                  padding: [0, 0, 0, 10],
                 }
               },
             },
             formatter: (value) => {
               let i = contains(indicator, value); // 处理对应要显示的样式
-              return '{a|' + value + '}\n' + '{b|' + dataValue[i] + '}'
+              return '{a|' + value + '}' + '{b|' + dataValue[i] + '}'
             },
           },
           nameGap: '1',
           indicator: indicator,
           splitArea: {
             areaStyle: {
-              color: ['#020D2C', '#000510', '#020D2C', '#000510',].reverse(),
+              color: ['rgba(0,0,0,0)', 'rgba(22, 80, 113, 1.00)', 'rgba(0,0,0,0)', 'rgba(22, 80, 113, 1.00)', 'rgba(0,0,0,0)'],
               shadowColor: 'rgba(9,107,166, 0)',
               shadowBlur: 0,
               shadowOffsetX: 10,
               shadowOffsetY: 10
             }
           },
-          axisLine: {lineStyle: {color: 'rgba(9,107,166, 0.2)'}},
+          axisLine: {lineStyle: {color: 'rgba(9,107,166, 0)'}},
           splitLine: {
             lineStyle: {
               width: 1,
-              color: ['#096ba6', '#096ba6', 'rgba(9,107,166, 0.3)', 'rgba(9,107,166, 0.7)'].reverse()
+              color: ['rgba(61, 145, 188, 1.00)', 'rgba(61, 145, 188, 1.00)',
+                'rgba(61, 145, 188, 1.00)', 'rgba(61, 145, 188, 1.00)', 'rgba(61, 145, 188, 1.00)']
             }
           }
         },
         series: [{
-          name: '本年度发现问题',
+          name: '企业经营情况',
           type: 'radar',
-          areaStyle: {color: 'rgba(0, 255, 252, 0.3)'},
+          areaStyle: {color: 'rgba(246, 220, 148, 0.8)'},
           symbol: 'circle',
           symbolSize: 0,
-          itemStyle: {color: 'rgba(252,226,78,0.8)', borderColor: 'rgba(252,226,78,0.2)', borderWidth: 20},
-          lineStyle: {color: 'rgba(0, 255, 252, 1)', width: 2},
+          itemStyle: {color: 'rgba(246, 220, 148, 1.00)', borderColor: 'rgba(246, 220, 148, 0.8)', borderWidth: 20},
+          lineStyle: {color: 'rgba(246, 220, 148, 1.00)', width: 2},
           label: {show: false},
           data: [dataValue]
         }

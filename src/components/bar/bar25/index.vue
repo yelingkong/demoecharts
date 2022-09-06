@@ -146,7 +146,7 @@ export default {
           },
           {
             type: 'pie',
-            name: '饼状背景',
+            name: '饼状背景渐变背景',
             radius: ['0%', '100%'],
             center: ['50%', '50%'],
             startAngle: 110,

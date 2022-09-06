@@ -1,6 +1,6 @@
 <template>
   <div class="numCard">
-    <span class="number" v-if="show">{{ num }}</span>
+    <span :class="className" v-if="show">{{ num }}</span>
   </div>
 </template>
 
@@ -9,19 +9,20 @@ import '@/utils/jquery.leoTextAnimate'
 import $ from 'jquery'
 
 export default {
-  name: "numCard",
+  name: 'numCard',
   components: {},
   props: {
     num: {
       type: String | Number,
       default() {
-        return '';
+        return ''
       }
     }
   },
   data() {
     return {
-      show: true
+      show: true,
+      className: ""
     }
   },
   watch: {
@@ -29,14 +30,41 @@ export default {
       this.show = false
       this.$nextTick(() => {
         this.show = true
-        $('.number4').leoTextAnimate({delay: 2000, speed: 3000, autorun: true, fixed: [',', ':', '.'], start: '-'})
+        setTimeout(() => {
+          $('.' + this.className).leoTextAnimate({
+            delay: 2000,
+            speed: 3000,
+            autorun: true,
+            fixed: [',', ':', '.'],
+            start: '-'
+          })
+        }, 10)
       })
-    },
+    }
   },
   mounted() {
-    $('.number').leoTextAnimate({delay: 2000, speed: 3000, autorun: true, fixed: [',', ':', '.'], start: '-'});
+    // 初始动画
+    this.className = 'num' + this.randomString(10)
+    this.$nextTick(() => {
+      $('.' + this.className).leoTextAnimate({
+        delay: 2000,
+        speed: 3000,
+        autorun: true,
+        fixed: [',', ':', '.'],
+        start: '-'
+      })
+    })
   },
-  methods: {}
+  methods: {
+    randomString(e) {
+      e = e || 32;
+      var t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678",
+        a = t.length,
+        n = "";
+      for (var i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
+      return n
+    },
+  }
 }
 </script>
 

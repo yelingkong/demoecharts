@@ -1,0 +1,110 @@
+//公共样式封装
+
+//flex布局
+.flex_start_center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: flex-start;
+}
+.flex_center_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: flex-start;
+}
+.flex_end_center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.cur {
+  cursor: pointer;
+}
+
+//滚动条样式
+.scrollBar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/*滚动条滑块*/
+.scrollBar::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px #2ce5ff;
+  background: #2ce5ff;
+}
+
+/*滚动条轨道*/
+.scrollBar::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+}
+
+
+//输入框placeholder颜色
+.placeholder::-webkit-input-placeholder {
+  color: rgba(151, 165, 195, 1);
+}
+
+.placeholder::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: rgba(151, 165, 195, 1);
+}
+
+.placeholder:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color:rgba(151, 165, 195, 1);
+}
+
+.placeholder:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(151, 165, 195, 1);
+}
+
+
+/* 水平镜像翻转 */
+.mirrorRotateLevel {
+  transform: rotateY(180deg);
+}
+/* 垂直镜像翻转 */
+.mirrorRotateVertical {
+  transform: rotateX(180deg);
+}
+
+//element ui下拉弹窗 dropdownPop自定义
+.dropdownPop {
+  background-color: #00429d;
+  border: 1px solid #4472cb;
+
+  .el-dropdown-menu__item {
+    color: #47c4ff;
+  }
+  .el-dropdown-menu__item:hover{
+    background-color: #4472cb;
+  }
+  .popper__arrow{
+    border: 1px solid #4472cb !important;
+  }
+  .popper__arrow::after {
+    border-top-color: #46bcff !important;
+    border-bottom-color: #46bcff !important;
+  }
+}
+
+//增加缓慢动效
+.transition {
+  -webkit-transition: .2s;
+  transition: .2s;
+}

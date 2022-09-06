@@ -25,10 +25,8 @@ export default {
       ...types
     }
   },
-  computed: {
-  },
-  watch: {
-  },
+  computed: {},
+  watch: {},
   mounted() {
     this.drawLine()
   },

@@ -2,7 +2,6 @@ import Vue from 'vue'
 import App from './App'
 import axios from 'axios'
 import router from './router'
-import * as filters from './filters'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '../src/utils/flexiblle'
@@ -35,9 +34,6 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 
 Vue.use(ba, '419e3567eb6e054cc88680218c1f39fd')
-Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
-})
 
 Vue.config.productionTip = false
 
