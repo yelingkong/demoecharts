@@ -44,67 +44,43 @@ export default {
         {
           "id": 1,
           "xianqu": "旺苍县",
-          "kaifaqu": "四川旺苍经济开发区（省级）",
-          "zhongdianchanye": "建材家居、机械制造、生物资源综合利用",
+          "kaifaqu": "四川旺苍经济开发区",
+          "zhongdianchanye": "建材家居",
           "longitude": 106.257,
           "latitude": 32.242
         },
         {
           "id": 2,
           "xianqu": "利州区",
-          "kaifaqu": "利州区工业集中发展区",
-          "zhongdianchanye": "食品饮料、机械电子、装备制造",
+          "kaifaqu": "利州区工业集中发",
+          "zhongdianchanye": "食品饮料",
           "longitude": 105.967,
           "latitude": 32.377
         },
         {
           "id": 3,
           "xianqu": "昭化区",
-          "kaifaqu": "四川广元昭化经济开发区（省级）",
-          "zhongdianchanye": "建材家居、食品饮料、新型材料",
+          "kaifaqu": "四川广元昭化经济开发区",
+          "zhongdianchanye": "建材家居",
           "longitude": 105.972,
           "latitude": 32.356
         },
         {
           "id": 4,
           "xianqu": "剑阁县",
-          "kaifaqu": "四川剑阁经济开发区（省级）",
-          "zhongdianchanye": "新材料、生物医药、农产品深加工",
+          "kaifaqu": "四川剑阁经济开",
+          "zhongdianchanye": "新材料",
           "longitude": 105.54,
           "latitude": 32.309
         },
         {
           "id": 5,
           "xianqu": "苍溪县",
-          "kaifaqu": "四川苍溪经济开发区（省级）",
-          "zhongdianchanye": "清洁能源、轻工制造、农产品深加工",
+          "kaifaqu": "四川苍溪经济）",
+          "zhongdianchanye": "清洁能源",
           "longitude": 106.262,
           "latitude": 32.233
         },
-        {
-          "id": 6,
-          "xianqu": "青川县",
-          "kaifaqu": "四川青川经济开发区（省级）",
-          "zhongdianchanye": "新材料、机械制造、医药康养",
-          "longitude": 105.339,
-          "latitude": 32.224
-        },
-        {
-          "id": 7,
-          "xianqu": "朝天区",
-          "kaifaqu": "四川广元朝天经济开发区（省级）",
-          "zhongdianchanye": "新型材料、食品饮料、农产品深加工",
-          "longitude": 105.896,
-          "latitude": 32.648
-        },
-        {
-          "id": 8,
-          "xianqu": "经开区",
-          "kaifaqu": "广元经济技术开发区（国家级）",
-          "zhongdianchanye": "新材料、食品饮料、生物医药、电子机械",
-          "longitude": 105.784,
-          "latitude": 32.428
-        }
       ]
     }
   },

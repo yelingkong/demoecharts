@@ -1,5 +1,19 @@
 //公共样式封装
+* {
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+///* 定义 */
+//@font-face {
+//  font-family: 'PangMenZhengDao';
+//  src: url('../../fonts/PangMenZhengDaoBiao.ttf');
+//}
 //flex布局
 .flex_start_center {
   display: flex;
