@@ -122,3 +122,12 @@ body {
   -webkit-transition: .2s;
   transition: .2s;
 }
+//隐藏滚动条
+.hideScrollBar::-webkit-scrollbar {
+  width: 0
+}
+
+.hideScrollBar {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
