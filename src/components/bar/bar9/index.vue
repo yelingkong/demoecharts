@@ -6,7 +6,6 @@
 
 <script>
 
-import {FontChart} from "@/utils/utils";
 
 export default {
   name: 'echarts1',
@@ -46,7 +45,7 @@ export default {
           "left": "47%",
           "width": "40%",
           "height": "46%",
-          "containLabel": false
+          "containLabel": true
         },
         "xAxis": {
           "axisLine": {
@@ -80,7 +79,7 @@ export default {
                   0,
                   0
                 ],
-                "fontSize": FontChart(13),
+                "fontSize": 13,
                 "color": "rgba(131, 137, 157, 1)"
               },
               "w2": {
@@ -90,7 +89,7 @@ export default {
                   0,
                   0
                 ],
-                "fontSize": FontChart(13),
+                "fontSize": 13,
                 "color": "rgba(131, 137, 157, 1)"
               },
             }

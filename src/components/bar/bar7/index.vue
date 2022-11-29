@@ -6,7 +6,6 @@
 
 <script>
 
-import {FontChart} from "@/utils/utils";
 
 export default {
   name: 'echarts1',
@@ -29,33 +28,20 @@ export default {
         title: [
           {
             text: '95',
-            left: '50%',
+            x: 'center',
             top: 'center',
             textStyle: {
-              fontSize: FontChart(30),
+              fontSize: 30,
               color: 'rgba(255, 255, 255, 1)',
-              fontStyle: 'normal',
-              fontWeight: '400',
-              fontFamily: 'DigitalDismay',
             },
-          }, {
-            text: '%',
-            left: '65%',
-            top: 'center',
-            textStyle: {
-              fontSize: FontChart(16),
-              color: 'rgba(255, 255, 255, 1)',
-              fontStyle: 'normal',
-              fontWeight: '400',
-            },
-          },
+          }
         ],
         series: [
           {
             name: "标签使用频率",
             type: "pie",
             radius: ["44%", "70%"],
-            center: ["60%", "50%"],
+            center: ["50%", "50%"],
             roseType: "radius",
             label: {
               show: false

@@ -172,6 +172,7 @@ export default {
           right: '70',
           top: '15%',
           bottom: '10%',
+          containLabel: true
         },
         legend: {
           show: true,

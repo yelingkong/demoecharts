@@ -36,7 +36,8 @@ export default {
           top: '30px',
           bottom: '30px',
           left: '40px',
-          right: '20px'
+          right: '20px',
+          containLabel: true,
         },
         tooltip: {
           trigger: 'axis',

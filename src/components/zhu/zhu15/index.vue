@@ -38,7 +38,8 @@ export default {
           "top": '20%',
           "bottom": '20%',
           "right": '2%',
-          "left": '10%'
+          "left": '10%',
+          containLabel: true,
         },
         "tooltip": {},
         "xAxis": {

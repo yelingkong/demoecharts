@@ -68,14 +68,14 @@ export default {
             name: '农业',
             value: 30
           }],
-          itemWidth: FontChart(15),
-          itemHeight: FontChart(10),
-          itemGap: FontChart(30)
+          itemWidth: 15,
+          itemHeight: 10,
+          itemGap: 30
         },
         series: [
           {
             type: 'pie',
-            center: ['70%', '50%'],
+            center: ['50%', '50%'],
             radius: ['60%', '80%'],
             color: ['#179CFB',
               '#33F8E9',
@@ -87,7 +87,7 @@ export default {
               '#9227EF'],
             labelLine: {
               normal: {
-                length: FontChart(20)
+                length: 20
               }
             },
             label: {
@@ -95,7 +95,7 @@ export default {
               position: 'inside',
               formatter: '{d}%',
               color: '#fff',
-              fontSize: FontChart(16)
+              fontSize: 16
             },
             itemStyle: {
               normal: {
@@ -143,6 +143,6 @@ export default {
 .echarts1 {
   position: relative;
   width: 100%;
-  height: calc(33.33% - 80px);
+  height: calc(100% - 0px);
 }
 </style>

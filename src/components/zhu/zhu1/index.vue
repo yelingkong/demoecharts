@@ -70,7 +70,8 @@ export default {
           top: '30px',
           bottom: '30px',
           left: '50px',
-          right: '50px'
+          right: '50px',
+          containLabel: true
         },
         tooltip: {
           trigger: 'axis',

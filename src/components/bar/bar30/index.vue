@@ -58,9 +58,9 @@ export default {
       var option = {
         color: colors,
         title: {
-          top: '45%',
+          top: 'center',
           z: 11,
-          x: '37%',
+          x: 'center',
           text: '跳闸分析',
           textStyle: {
             fontSize: 14,

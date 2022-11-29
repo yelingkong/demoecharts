@@ -82,7 +82,8 @@ export default {
           top: '10%',
           left: '5%',
           right: '0%',
-          bottom: '3%'
+          bottom: '3%',
+          containLabel: true,
         },
         color: color,
         yAxis: [{

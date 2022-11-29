@@ -1,14 +1,14 @@
 <template>
-  <div class="incomecharts">
-    <div class="incomechart">
-      <div class="incomechart1" ref="echarts" id="incomechart1">
+  <div class="chartss">
+    <div class="charts">
+      <div class="charts1" ref="echarts" id="charts1">
       </div>
-      <div class="incomechart2">
-        <div class="incomechart2item" v-for="(item,index) in list" :key="index">
-          <div class="incomechart2iteml">
+      <div class="charts2">
+        <div class="charts2item" v-for="(item,index) in list" :key="index">
+          <div class="charts2iteml">
             {{ item.name }}
           </div>
-          <div class="incomechart2itemr" :class="'ibg'+(index+1)">{{ item.value }}%</div>
+          <div class="charts2itemr" :class="'ibg'+(index+1)">{{ item.value }}%</div>
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@ export default {
   methods: {
     getheight () {
       window.addEventListener('resize', this.getheight)
-      $('.incomechart1').height($('.incomechart1').width())
+      $('.charts1').height($('.charts1').width())
       this.$nextTick(() => {
         this.getechart()
       })
@@ -146,7 +146,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.incomechart {
+.charts {
   width: 100%;
   height: calc(100% - 0px);
   position: relative;
@@ -158,7 +158,7 @@ export default {
   flex-direction: row;
 }
 
-.incomechart1 {
+.charts1 {
   background-size: 88%;
   position: relative;
   height: calc(100% - 20px);
@@ -167,7 +167,7 @@ export default {
   margin-right: 15px;
 }
 
-.incomechart2 {
+.charts2 {
   position: relative;
   height: 100%;
   width: calc(50% - 60px);
@@ -179,7 +179,7 @@ export default {
   flex-direction: column;
 }
 
-.incomechart2 .incomechart2item {
+.charts2 .charts2item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,7 +187,7 @@ export default {
   flex-direction: row;
 }
 
-.incomechart2 .incomechart2item .incomechart2iteml {
+.charts2 .charts2item .charts2iteml {
   font-size: 12px;
   font-family: PingFang SC;
   font-weight: 500;
@@ -198,7 +198,7 @@ export default {
   text-indent: 10px;
 }
 
-.incomechart2 .incomechart2item .incomechart2itemr {
+.charts2 .charts2item .charts2itemr {
   color: #FFFFFF;
   width: 70px;
   padding-right: 5px;
@@ -215,7 +215,7 @@ export default {
   color: #FFFFFF;
 }
 
-.incomechart {
+.charts {
   position: relative;
   height: calc(100% - 0px);
   width: 100%;
@@ -278,13 +278,13 @@ export default {
   }
 }
 
-.incomecharts {
+.chartss {
   position: relative;
   width: 100%;
   height: calc(100% - 90px);
 }
 
-.incomecharts3 {
+.chartss3 {
   height: 40px;
 }
 </style>

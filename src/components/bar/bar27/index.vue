@@ -4,7 +4,6 @@
 
     </div>
     <div class="bg">
-      <img src="./bg.png" alt="">
     </div>
   </div>
 
@@ -12,7 +11,6 @@
 
 <script>
 
-import {FontChart} from "@/utils/utils";
 
 export default {
   name: 'echarts1',
@@ -47,16 +45,16 @@ export default {
           text: getvalue + '%',
           textStyle: {
             color: '#fff',
-            fontSize: FontChart(18)
+            fontSize: 18
           },
           subtext: '非常满意',
           subtextStyle: {
             color: 'rgba(255, 255, 255, 1)',
-            fontSize: FontChart(12)
+            fontSize: 12
           },
           itemGap: 3,
           left: 'center',
-          top: '32%'
+          top: 'center'
         },
         tooltip: {
           formatter: function (params) {
@@ -91,7 +89,7 @@ export default {
           data: getvalue,
           coordinateSystem: 'polar',
           roundCap: true,
-          barWidth: FontChart(10),
+          barWidth: 10,
           itemStyle: {
             normal: {
               opacity: 1,
@@ -146,11 +144,9 @@ export default {
     flex-wrap: nowrap;
     flex-direction: row;
     align-content: flex-start;
+    background: url("./bg.png") center center no-repeat;
+    background-size: 109px 109px;
 
-    img {
-      width: 100%;
-      //max-width: 800px;
-    }
   }
 }
 </style>

@@ -6,7 +6,6 @@
 
 <script>
 
-import {FontChart} from "@/utils/utils";
 
 export default {
   name: 'echarts1',
@@ -32,7 +31,7 @@ export default {
           align: 'left',
           textStyle: {
             color: '#fff',
-            fontSize: FontChart(14)
+            fontSize: 14
           },
           data: [{
             name: '58检查',
@@ -50,9 +49,9 @@ export default {
             name: '巡检',
             value: 30
           }],
-          itemWidth: FontChart(15),
-          itemHeight: FontChart(10),
-          itemGap: FontChart(30)
+          itemWidth: 15,
+          itemHeight: 10,
+          itemGap: 30
         },
         series: [
           {
@@ -66,7 +65,7 @@ export default {
               'rgba(160, 206, 58, 1)'],
             labelLine: {
               normal: {
-                length: FontChart(20)
+                length: 20
               }
             },
             label: {
@@ -77,17 +76,17 @@ export default {
                 rich: {
                   b: {
                     color: 'rgba(255, 255, 255, 1)',
-                    fontSize: FontChart(16)
+                    fontSize: 16
                   },
                   per: {
                     color: 'rgba(169, 177, 192, 1)',
-                    fontSize: FontChart(16),
+                    fontSize: 16,
                     padding: [5, 0, 5, -5]
                   }
                 },
                 textStyle: {
                   color: '#fff',
-                  fontSize: FontChart(14)
+                  fontSize: 14
                 }
               }
             },

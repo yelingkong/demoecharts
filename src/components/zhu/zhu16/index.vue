@@ -70,7 +70,8 @@ export default {
           left: 20,
           right: 20,
           top: 20,
-          bottom: 30
+          bottom: 30,
+          containLabel: true,
         },
         tooltip: {
           show: true,

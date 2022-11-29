@@ -44,16 +44,15 @@ export default {
           left: "3%",
           right: "3%",
           top: "12%",
-          bottom: "15%",
           containLabel: true,
         },
         legend: {
           x: 'center',
-          y: 'top',
+          y: '20',
           itemWidth: 15,
           itemHeight: 15,
           textStyle: {
-            color: 'rgba(51, 51, 51, 1)'
+            color: '#fff'
           },
           itemGap: 20,
         },
@@ -72,10 +71,6 @@ export default {
               "6月",
               "7月",
               "8月",
-              "9月",
-              "10月",
-              "11月",
-              "12月",
             ],
             axisLine: {
               lineStyle: {
@@ -86,7 +81,7 @@ export default {
               show: false,
             },
             axisLabel: {
-              color: "rgba(51, 51, 51, 1)",
+              color: "#fff",
               fontSize: 12,
             },
           },
@@ -109,7 +104,7 @@ export default {
               show: false,
             },
             axisLabel: {
-              color: "rgba(51, 51, 51, 1)",
+              color: "#fff",
               fontSize: 13,
             },
             splitLine: {
@@ -134,10 +129,6 @@ export default {
                 color: 'rgba(77, 169, 255, 1)',
               },
             },
-            showBackground: true,
-            backgroundStyle: {
-              color: 'rgba(245, 246, 250, 1)',
-            },
             label: {
               normal: {
                 show: false,
@@ -147,7 +138,7 @@ export default {
                 position: "top",
               },
             },
-            data: [150, 100, 220, 50, 50, 60, 60, 220, 220, 150, 210, 40],
+            data: [150, 100, 220, 50, 50, 60, 60, 220],
           },
           {
             name: "跨境灰名单客户",
@@ -155,10 +146,6 @@ export default {
             barWidth: 12,
             zlevel: 2,
             yAxisIndex: 0,
-            showBackground: true,
-            backgroundStyle: {
-              color: 'rgba(245, 246, 250, 1)',
-            },
             itemStyle: {
               normal: {
                 barBorderRadius: 0,
@@ -174,7 +161,7 @@ export default {
                 position: "top",
               },
             },
-            data: [40, 110, 160, 130, 50, 50, 50, 190, 60, 50, 50, 50],
+            data: [150, 100, 220, 50, 50, 60, 60, 220],
           },
           {
             name: "贸易便利化企业",
@@ -182,10 +169,6 @@ export default {
             barWidth: 12,
             zlevel: 2,
             yAxisIndex: 0,
-            showBackground: true,
-            backgroundStyle: {
-              color: 'rgba(245, 246, 250, 1)',
-            },
             itemStyle: {
               normal: {
                 barBorderRadius: 0,
@@ -201,18 +184,14 @@ export default {
                 position: "top",
               },
             },
-            data: [220, 230, 120, 40, 30, 150, 150, 200, 140, 100, 110, 120],
+            data: [150, 100, 220, 50, 50, 60, 60, 220],
           },
           {
             name: "其他",
             type: "bar",
-            barWidth: 12,
+            barWidth: 10,
             zlevel: 2,
             yAxisIndex: 0,
-            showBackground: true,
-            backgroundStyle: {
-              color: 'rgba(245, 246, 250, 1)',
-            },
             itemStyle: {
               normal: {
                 barBorderRadius: 0,
@@ -228,7 +207,7 @@ export default {
                 position: "top",
               },
             },
-            data: [90, 60, 180, 100, 100, 70, 80, 170, 110, 110, 110, 110],
+            data: [150, 100, 220, 50, 50, 60, 60, 220],
           },
         ],
       };
@@ -244,6 +223,6 @@ export default {
 .echarts1 {
   position: relative;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 0px);
 }
 </style>

@@ -40,13 +40,6 @@ export default {
       var list = this.list
       var xdata = ['2016年', '2017年', '2018年', '2019年', '2020年', '2021年']
       var ydata = [20, 20, 30, 40, 20, 10]
-      list.forEach((type, index) => {
-        xdata.forEach((type2, index2) => {
-          if (xdata[index2] === moment(type.time).format('M月')) {
-            ydata[index2] = type.num
-          }
-        })
-      })
       var option = {
         tooltip: {
           trigger: 'axis',
@@ -58,7 +51,8 @@ export default {
           top: '15%',
           left: '40',
           right: '30',
-          bottom: '15%'
+          bottom: '15%',
+          containLabel: true
         },
         xAxis: [{
           type: 'category',

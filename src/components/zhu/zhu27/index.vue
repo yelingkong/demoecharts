@@ -35,36 +35,16 @@ export default {
       // 基于准备好的dom，初始化echarts实例
       window.addEventListener('resize', this.drawLine)
       let myChart = this.$echarts.init(this.$refs.echarts)
-      var getname = this.list
-      var getvalue = [4, 2, 3, 6, 5, 4, 2, 3, 6, 5, 4, 2, 3, 6, 5,]
-      var getvalue1 = [8, 2, 3, 8, 6, 8, 2, 3, 8, 6, 8, 2, 3, 8, 6]
-      var age = [45, 55, 35, 42, 60, 45, 55, 35, 42, 60, 45, 55, 35, 42, 60, 45, 55, 35, 42, 60,]
-
-      function calMax(arr) {
-        let max = 0
-        arr.forEach((el) => {
-          el.forEach((el1) => {
-            if (!(el1 === undefined || el1 === '')) {
-              if (max < el1) {
-                max = el1
-              }
-            }
-          })
-        })
-        let maxint = Math.ceil(max / 9.5)
-        let maxval = maxint * 10
-        return maxval
-      }
-
-      var sumData = []
-      sumData = sumData.concat(getvalue).concat(getvalue1)
-      var max = Math.ceil((calMax([sumData])) / 1) * 1
+      var xData = [4, 2, 3, 6, 5, 4, 2, 3, 6, 5, 4, 2, 3, 6, 5]
+      var xData2 = [8, 2, 3, 8, 6, 8, 2, 3, 8, 6, 8, 2, 3, 8, 6]
+      var xData3 = [8, 2, 3, 8, 6, 8, 2, 3, 8, 6, 8, 2, 3, 8, 6]
       var option = {
         grid: {
-          top: '100px',
-          bottom: '100px',
-          left: '80px',
-          right: '100px'
+          top: '50px',
+          bottom: '20px',
+          left: '20px',
+          right: '20px',
+          containLabel: true
         },
         tooltip: {
           trigger: 'axis',
@@ -89,17 +69,17 @@ export default {
           itemGap: 10,
           textStyle: {
             color: '#fff',
-            fontSize: '33'
+            fontSize: '14'
           },
           data: ['合同金额', '已完成合同金额', '完成比例'],
         },
         xAxis: [{
-          data: getname,
+          data: xData,
           axisLabel: {
             margin: 10,
             color: 'rgba(245, 245, 246, 1.00)',
             textStyle: {
-              fontSize: 34
+              fontSize: 14
             },
           },
           axisLine: {
@@ -123,7 +103,6 @@ export default {
           {
             type: 'value',
             min: 0,
-            max: max, // 计算最大值
             interval: 5, //  平均分为5份
             nameTextStyle: {
               color: 'rgba(0, 156, 255, 1)',
@@ -133,7 +112,7 @@ export default {
             axisLabel: {
               color: '#FFFEFE',
               textStyle: {
-                fontSize:34
+                fontSize: 14
               },
             },
             axisLine: {
@@ -161,7 +140,7 @@ export default {
               formatter: '{value}%',
               color: '#FFFEFE',
               textStyle: {
-                fontSize: 34
+                fontSize: 14
               },
             },
             splitLine: {
@@ -175,28 +154,28 @@ export default {
           {
             name: '合同金额',
             type: 'bar',
-            data: getvalue,
-            barWidth: '17px',
+            data: xData,
+            barWidth: 10,
             itemStyle: {
               normal: {
                 color: 'rgba(30, 160, 148, 1.00)',
                 barBorderRadius: [0, 0, 0, 0],
                 borderColor: 'rgba(50, 240, 221, 1.00)',
-                borderWidth: 3
+                borderWidth: 1
               }
             },
           },
           {
             name: '已完成合同金额',
             type: 'bar',
-            data: getvalue1,
-            barWidth: '17px',
+            data: xData2,
+            barWidth: 10,
             itemStyle: {
               normal: {
                 color: 'rgba(22, 158, 215, 1.00)',
                 barBorderRadius: [0, 0, 0, 0],
                 borderColor: 'rgba(48, 240, 255, 1.00)',
-                borderWidth: 3
+                borderWidth: 1
               }
             },
           },
@@ -204,10 +183,10 @@ export default {
             name: '完成比例',
             type: 'line',
             yAxisIndex: 1,
-            data: age,
+            data: xData3,
             smooth: true,
             symbol: 'circle', //数值点设定为实心点
-            symbolSize: 6, // 折线的点的大小
+            symbolSize: 3, // 折线的点的大小
             itemStyle: {
               normal: {
                 color: 'rgba(253, 203, 0, 1)', //点的颜色

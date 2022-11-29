@@ -35,7 +35,7 @@ export default {
           },
           itemGap: 10,
           left: 'center',
-          top: '37%'
+          top: 'center'
         },
         tooltip: {
           formatter: function (params) {

@@ -6,8 +6,6 @@
 
 <script>
 
-import {FontChart} from '@/utils/utils'
-import $ from 'jquery'
 
 export default {
   name: 'echarts1',
@@ -95,7 +93,7 @@ export default {
             x: '25%',
             text: '1116',
             textStyle: {
-              fontSize: FontChart(16),
+              fontSize: 16,
               color: 'rgba(255, 255, 255, 1)',
             },
           },
@@ -124,9 +122,9 @@ export default {
             var p = Math.round(((value / total) * 100)); //求出百分比
             return `${name}  ${p}%`;  //返回出图例所显示的内容是名称+百分比
           },
-          itemWidth: FontChart(15),
-          itemHeight: FontChart(15),
-          itemGap: FontChart(30)
+          itemWidth: 15,
+          itemHeight: 15,
+          itemGap: 30
         },
         series: [
           {

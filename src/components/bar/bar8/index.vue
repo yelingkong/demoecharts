@@ -6,7 +6,6 @@
 
 <script>
 
-import {FontChart} from "@/utils/utils";
 
 export default {
   name: 'echarts1',
@@ -44,7 +43,7 @@ export default {
                 show: false,
                 position: 'center',
                 textStyle: {
-                  fontSize: FontChart(12),
+                  fontSize: 12,
                   padding: [-20, 0, 0, 0],
                 },
                 formatter: function (params) {
