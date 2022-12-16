@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import echart1 from './echart1'
+import echart1 from './echarts'
 
 export default {
   name: 'echarts',

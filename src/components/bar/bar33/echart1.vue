@@ -208,13 +208,5 @@ export default {
   position: relative;
   width: 100%;
   height: calc(100% - 0px);
-
-  //p {
-  //  font-size: 16px;
-  //  font-family: MiSans;
-  //  font-weight: 400;
-  //  color: #FFFFFF;
-  //  margin-top: 5px;
-  //}
 }
 </style>

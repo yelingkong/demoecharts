@@ -6,13 +6,17 @@
 */
 <template>
   <div class="echartsBody">
-    <echart1 title="名称" percent="70"></echart1>
+    <echart1 color4="rgba(53, 253, 246, 0.3)"
+              color3="rgba(53, 253, 246, 0.8)"
+              color1="rgba(53, 253, 246, 0.5)"
+              color2="rgba(53, 253, 246, 1.00)"
+              percent="50"
+              title="名称"></echart1>
   </div>
 </template>
 
 <script>
-import echart1 from './echart1'
-
+import echart1 from './echarts'
 export default {
   name: 'echarts',
   components: {
