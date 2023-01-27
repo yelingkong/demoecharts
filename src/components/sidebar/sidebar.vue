@@ -128,6 +128,16 @@ export default {
             },
           ]
         },
+        {
+          title: 'threejs',
+          url: '4',
+          children: [
+            {
+              title: 'tree',
+              url: '/three/tree'
+            }
+          ]
+        },
       ]
     }
   },

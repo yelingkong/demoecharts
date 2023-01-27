@@ -301,6 +301,15 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/three/tree',
+      name: 'tree',
+      component: resolve => require(['@/views/three/tree/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {
