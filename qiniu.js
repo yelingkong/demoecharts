@@ -1,11 +1,10 @@
-import fs from 'fs'
-import path from 'path'
-import qiniu from 'qiniu'
-
-const accessKey = require('./qiniu-upload-prefiex.js');
-const secretKey = require('./qiniu-upload-prefiex.js');
-const prefix = require('./qiniu-upload-prefiex.js');
-const space = require('./qiniu-upload-prefiex.js');
+var fs = require('fs')
+var path = require('path')
+var qiniu = require("qiniu")
+var qiniuPrefix = require("./qiniu-upload-prefiex")
+//自己七牛云的秘钥
+var accessKey = qiniuPrefix.accessKey
+var secretKey = qiniuPrefix.secretKey
 var mac = new qiniu.auth.digest.Mac(accessKey, secretKey)
 var config = new qiniu.conf.Config()
 // 空间对应的机房，zone_z1代表华北，其他配置参见七牛云文档
@@ -23,6 +22,7 @@ config.useCdnDomain = true
 var formUploader = new qiniu.form_up.FormUploader(config)
 var putExtra = new qiniu.form_up.PutExtra()
 //文件前缀
+const prefix = qiniuPrefix.prefix
 main()
 
 function main() {
@@ -49,7 +49,7 @@ function upload(key, localFile) {
   formUploader.putFile(uploadToken, key, localFile, null, function (respErr, respBody, respInfo) {
     if (respErr) {
       console.log(localFile + "文件上传失败,正在重新上传-----------")
-      upload(space, localFile)
+      upload(qiniuPrefix.space, localFile)
     } else {
       if (respInfo.statusCode == 200) {
         console.log(respBody)
@@ -81,10 +81,9 @@ function displayFile(param) {
       })
     } else {
       //file2/这里是空间里的文件前缀
-      var key = space
+      var key = qiniuPrefix.space
       var localFile = './' + param
-      // 不上传.gz和.zip文件
-      if (!localFile.endsWith(".gz") && !localFile.endsWith(".zip")) {
+      if (!localFile.endsWith(".gz")) {
         upload(key, localFile)
       }
     }

@@ -293,15 +293,6 @@ const router = new Router({
       }
     },
     {
-      path: '/three/tree',
-      name: 'tree',
-      component: resolve => require(['@/views/three/tree/index'], resolve),
-      meta: {
-        requiresAuth: true,
-        showPage: true
-      }
-    },
-    {
       path: '/widget/:id',
       name: 'widget',
       component: resolve => require(['@/views/widget/page'], resolve),
