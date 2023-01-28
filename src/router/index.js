@@ -310,6 +310,15 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/three/grass',
+      name: 'grass',
+      component: resolve => require(['@/views/three/grass/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {

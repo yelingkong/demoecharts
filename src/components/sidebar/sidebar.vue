@@ -133,9 +133,13 @@ export default {
           url: '4',
           children: [
             {
-              title: 'tree',
+              title: '树林效果',
               url: '/three/tree'
-            }
+            },
+            {
+              title: '草地效果',
+              url: '/three/grass'
+            },
           ]
         },
       ]
