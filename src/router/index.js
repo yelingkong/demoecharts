@@ -319,6 +319,15 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/three/waves',
+      name: '波浪',
+      component: resolve => require(['@/views/three/waves/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {

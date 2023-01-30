@@ -140,6 +140,10 @@ export default {
               title: '草地效果',
               url: '/three/grass'
             },
+            {
+              title: '波浪效果',
+              url: '/three/waves'
+            },
           ]
         },
       ]

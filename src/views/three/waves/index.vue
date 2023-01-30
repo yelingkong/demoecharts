@@ -1,6 +1,6 @@
 <template>
   <div class="homebody">
-    <sidebar :openeds="['4']" active="/three/grass"></sidebar>
+    <sidebar :openeds="['4']" active="/three/waves"></sidebar>
     <div class="homemain">
       <model></model>
     </div>
