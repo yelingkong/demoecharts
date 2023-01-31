@@ -146,6 +146,16 @@ export default {
             },
           ]
         },
+        {
+          title: '其他实例效果',
+          url: '5',
+          children: [
+            {
+              title: '.9九宫格',
+              url: '/demo/gridView'
+            }
+          ]
+        },
       ]
     }
   },

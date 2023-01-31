@@ -328,6 +328,15 @@ const router = new Router({
         showPage: true
       }
     },
+    {
+      path: '/demo/gridView',
+      name: '.9背景九宫格',
+      component: resolve => require(['@/views/demo/gridView/index'], resolve),
+      meta: {
+        requiresAuth: true,
+        showPage: true
+      }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {
