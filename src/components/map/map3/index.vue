@@ -10,14 +10,6 @@ import map from './map.json'
 export default {
   name: 'echarts1',
   components: { },
-  props: {
-    id: {
-      type: String,
-      default () {
-        return ''
-      }
-    }
-  },
   data () {
     return {
       status: '',

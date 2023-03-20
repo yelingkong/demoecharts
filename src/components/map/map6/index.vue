@@ -118,6 +118,7 @@ export default {
         that.top = height * datas[that.activex2][1];
         let data = myChart.convertFromPixel('geo', [that.left, that.top])
         console.log(data)
+
         that.getPositionByLonLats(data[0], data[1])
       }, 4000)
     },
