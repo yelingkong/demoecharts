@@ -8,6 +8,7 @@
 
 import Highcharts from "highcharts";
 import highcharts3d from 'highcharts/highcharts-3d'
+
 highcharts3d(Highcharts)
 export default {
   name: 'echarts1',
@@ -46,7 +47,7 @@ export default {
             beta: 0
           }
         },
-        colors: ['#8442fd', '#f627ff', '#28d7f0'],
+        colors: ['#1648c4', '#c6cee3'],
         legend: {
           layout: 'vertical',
           align: 'right',
@@ -96,4 +97,5 @@ export default {
   width: 100%;
   height: calc(100% - 0px);
 }
+
 </style>

@@ -17,6 +17,7 @@
     "better-scroll": "^2.4.2",
     "core-js": "3.19.1",
     "crypto-js": "^4.0.0",
+    "dayjs": "^1.11.7",
     "echarts": "^4.9.0",
     "echarts-gl": "^1.1.2",
     "echarts-liquidfill": "^2.0.6",

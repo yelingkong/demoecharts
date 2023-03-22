@@ -53,6 +53,18 @@ export default {
           bottom: '10%',
           containLabel: true
         },
+        legend: {
+          show: true,
+          right: '0',
+          top: '0',
+          icon: 'circle',
+          itemWidth: 5,
+          itemHeight: 5,
+          textStyle: {
+            color: 'rgba(178, 203, 218, 1)',
+            fontSize: 12
+          },
+        },
         tooltip: {
           show: true,
         },

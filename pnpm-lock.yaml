@@ -16,6 +16,7 @@ specifiers:
   better-scroll: ^2.4.2
   core-js: 3.19.1
   crypto-js: ^4.0.0
+  dayjs: ^1.11.7
   echarts: ^4.9.0
   echarts-gl: ^1.1.2
   echarts-liquidfill: ^2.0.6
@@ -71,6 +72,7 @@ dependencies:
   better-scroll: 2.5.0
   core-js: 3.19.1
   crypto-js: 4.1.1
+  dayjs: 1.11.7
   echarts: 4.9.0
   echarts-gl: 1.1.2_echarts@4.9.0
   echarts-liquidfill: 2.0.6_echarts@4.9.0
@@ -4672,6 +4674,10 @@ packages:
   /data-uri-to-buffer/3.0.1:
     resolution: {integrity: sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==}
     engines: {node: '>= 6'}
+    dev: false
+
+  /dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
     dev: false
 
   /de-indent/1.0.2:
