@@ -150,7 +150,8 @@ export default {
             data: this.list
           },
         ],
-        series: [{
+        series: [
+          {
           name: '订单总数',
           type: 'bar',
           xAxisIndex: 1,
