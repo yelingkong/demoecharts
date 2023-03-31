@@ -3,74 +3,45 @@
   </div>
 </template>
 <script>
+import echarts from "echarts"
+
 export default {
   name: 'echarts1',
   components: {},
   props: {
     id: {
       type: String,
-      default () {
+      default() {
         return ''
       }
     }
   },
-  data () {
+  data() {
     return {
       status: '',
       active: false,
-      list: ['1月', '2月', '3月', '4月', '5月']
+      xData: ['1月', '2月', '3月', '4月', '5月', '6月'],
+      yData1: [10, 20, 30, 40, 20, 30, 20],
+      yData2: [10, 20, 30, 40, 20, 30, 20],
+      yData3: [10, 20, 30, 40, 20, 30, 20],
+      yData4: [20, 30, 20, 10, 20, 30, 40],
     }
   },
   watch: {},
-  mounted () {
+  mounted() {
     this.drawLine()
   },
   methods: {
-    getactive () {
-      this.active = !this.active
-      if (this.active) {
-        this.list = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
-      } else {
-        this.list = ['1月', '2月', '3月', '4月', '5月']
-      }
-      this.$nextTick(() => {
-        this.drawLine()
-      })
-    },
-    drawLine () {
+    drawLine() {
       // 基于准备好的dom，初始化echarts实例
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
-      var getname = this.list
-      var getvalue = [4, 2, 3, 6, 5, 4, 2, 3, 6, 5, 4, 2, 3, 6, 5,]
-      var getvalue1 = [8, 2, 3, 8, 6, 8, 2, 3, 8, 6, 8, 2, 3, 8, 6]
-      var age = [45, 55, 35, 42, 60, 45, 55, 35, 42, 60, 45, 55, 35, 42, 60, 45, 55, 35, 42, 60,]
-
-      function calMax (arr) {
-        let max = 0
-        arr.forEach((el) => {
-          el.forEach((el1) => {
-            if (!(el1 === undefined || el1 === '')) {
-              if (max < el1) {
-                max = el1
-              }
-            }
-          })
-        })
-        let maxint = Math.ceil(max / 9.5)
-        let maxval = maxint * 10
-        return maxval
-      }
-
-      var sumData = []
-      sumData = sumData.concat(getvalue).concat(getvalue1)
-      var max = Math.ceil((calMax([sumData])) / 1) * 1
+      let myChart = echarts.init(this.$refs.echarts)
       var option = {
         grid: {
           top: '30px',
-          bottom: '30px',
-          left: '50px',
-          right: '50px',
+          bottom: '0px',
+          left: '0px',
+          right: '0px',
           containLabel: true
         },
         tooltip: {
@@ -78,7 +49,7 @@ export default {
           axisPointer: {
             type: 'shadow',
             shadowStyle: {
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
                 color: 'rgba(255, 174, 0, 0.1)'
               }, {
@@ -90,29 +61,26 @@ export default {
         },
         legend: {
           top: 0,
-          right: 20,
-          left: '50%',
-          itemWidth: 14,
-          itemHeight: 14,
-          itemGap: 10,
+          right: 0,
+          itemWidth: 10,
+          itemHeight: 10,
           textStyle: {
-            color: '#fff',
-            fontSize: '11'
+            color: 'rgba(157, 185, 233, 1)',
+            fontSize: '14'
           },
-          data: ['订单实收', '未支付金额', '运营成本', '毛利率'],
         },
         xAxis: [{
-          data: getname,
+          data: this.xData,
           axisLabel: {
             margin: 10,
-            color: 'rgba(130, 153, 191, 1)',
+            color: 'rgba(202, 215, 245, 1)',
             textStyle: {
-              fontSize: 13
+              fontSize: 14
             },
           },
           axisLine: {
             lineStyle: {
-              color: 'rgba(39, 76, 129, 0.26)',
+              color: 'rgba(49, 119, 214, 1)',
               width: 1
             }
           },
@@ -127,26 +95,19 @@ export default {
             show: false
           },
         }],
+
         yAxis: [
           {
             type: 'value',
-            min: 0,
-            max: max, // 计算最大值
-            interval: 5, //  平均分为5份
-            nameTextStyle: {
-              color: 'rgba(0, 156, 255, 1)',
-              fontSize: 13,
-              padding: [0, 20, -5, 0]
-            },
             axisLabel: {
-              color: 'rgba(130, 153, 191, 1)',
+              color: 'rgba(202, 215, 245, 1)',
               textStyle: {
-                fontSize: 13
+                fontSize: 14
               },
             },
             axisLine: {
               lineStyle: {
-                color: 'rgba(39, 76, 129, 0.26)',
+                color: 'rgba(49, 119, 214, 1)',
               }
             },
             axisTick: {
@@ -159,11 +120,10 @@ export default {
                 width: 1,
               }
             }
-          }, {
+          },
+          {
             type: 'value',
-            min: 20,
-            max: 70,
-            interval: 25,
+            show: false,
             axisLabel: {
               formatter: '{value}%',
               color: 'rgba(130, 153, 191, 1)',
@@ -180,66 +140,49 @@ export default {
           }],
         series: [
           {
-            name: '订单实收',
+            name: '贸易额',
             type: 'bar',
-            data: getvalue,
+            data: this.yData1,
             barWidth: '7px',
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
-                  color: 'rgba(0, 246, 150, 1)'
+                  color: 'rgba(47, 156, 252, 1)'
                 }, {
                   offset: 1,
-                  color: 'rgba(16, 226, 202, 1)'
+                  color: 'rgba(254, 221, 66, 1)'
                 }], false),
                 barBorderRadius: [4, 4, 0, 0],
               }
             },
           },
           {
-            name: '未支付金额',
+            name: '数重量',
             type: 'bar',
-            data: getvalue1,
+            data: this.yData2,
             barWidth: '7px',
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
-                  color: 'rgba(0, 204, 255, 1)'
+                  color: 'rgba(182, 90, 145, 1)'
                 }, {
                   offset: 1,
-                  color: 'rgba(0, 72, 255, 1)'
+                  color: 'rgba(253, 122, 60, 1)'
                 }], false),
                 barBorderRadius: [4, 4, 0, 0],
               }
             },
           },
           {
-            name: '运营成本',
-            type: 'bar',
-            data: getvalue1,
-            barWidth: '7px',
-            itemStyle: {
-              normal: {
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                  offset: 0,
-                  color: 'rgba(255, 183, 28, 1)'
-                }, {
-                  offset: 1,
-                  color: 'rgba(255, 111, 40, 1)'
-                }], false),
-                barBorderRadius: [4, 4, 0, 0],
-              }
-            },
-          }, {
             name: '毛利率',
             type: 'line',
-            yAxisIndex: 1,
-            data: age,
+            yAxisIndex: 0,
+            data: this.yData3,
             smooth: true,
             symbol: 'circle', //数值点设定为实心点
-            symbolSize: 6, // 折线的点的大小
+            symbolSize: 0, // 折线的点的大小
             itemStyle: {
               normal: {
                 color: 'rgba(253, 203, 0, 1)', //点的颜色
@@ -249,7 +192,51 @@ export default {
                 },
               },
             },
-          },]
+            areaStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(253, 203, 0, 0.5)'
+                },
+                  {
+                    offset: 1,
+                    color: 'rgba(253, 203, 0, 0)'
+                  }
+                ], false),
+              }
+            },
+          },
+          {
+            name: '查验率',
+            type: 'line',
+            yAxisIndex: 0,
+            data: this.yData4,
+            smooth: true,
+            symbol: 'circle', //数值点设定为实心点
+            symbolSize: 0, // 折线的点的大小
+            itemStyle: {
+              normal: {
+                color: 'rgba(75, 168, 252, 1)', //点的颜色
+                lineStyle: {
+                  color: 'rgba(75, 168, 252, 1)', //线的颜色
+                  width: 1, // 折线图线条粗细设置
+                },
+              },
+            },
+            areaStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(75, 168, 252, 0.5)'
+                },
+                  {
+                    offset: 1,
+                    color: 'rgba(75, 168, 252, 0)'
+                  }
+                ], false),
+              }
+            },
+          }]
       }
       myChart.clear()
       myChart.resize()
@@ -263,6 +250,6 @@ export default {
 .echarts1 {
   position: relative;
   width: 100%;
-  height: calc(100% - 50PX);
+  height: 100%;
 }
 </style>
