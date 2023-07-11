@@ -66,6 +66,7 @@ export default {
             depth: 10,
             width: 5,
             lineWidth: 1,
+
             dataLabels: {
               padding: 0,
               show: false,
@@ -79,6 +80,7 @@ export default {
         series: [{
           type: 'pie',
           name: '故障类型',
+
           data: [
             ['机电故障', 45],
             ['电气故障', 8],
