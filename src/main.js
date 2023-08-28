@@ -33,7 +33,7 @@ Vue.prototype.axios = axios
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
-Vue.use(ba, '419e3567eb6e054cc88680218c1f39fd')
+Vue.use(ba, '09a325075edcebb1ac0e2a0be62a88dd')
 
 Vue.config.productionTip = false
 
