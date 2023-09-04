@@ -7,7 +7,7 @@
 </template>
 
 <script>
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -42,7 +42,7 @@ export default {
   methods: {
     drawLine() {
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var option = {
         title: [{
           text: '{a|' + this.percent + '%}',
@@ -78,7 +78,7 @@ export default {
             hoverAnimation: false,
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.RadialGradient(0.5, 0.5, 0.5, [{
+                color: new echarts.graphic.RadialGradient(0.5, 0.5, 0.5, [{
                   offset: 0,
                   color: 'rgba(36, 220, 247, 0.05)'
                 },
@@ -114,7 +114,7 @@ export default {
             hoverAnimation: false,
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.RadialGradient(0.5, 0.5, 0.5, [{
+                color: new echarts.graphic.RadialGradient(0.5, 0.5, 0.5, [{
                   offset: 0,
                   color: 'rgba(36, 220, 247, 0.1)'
                 },

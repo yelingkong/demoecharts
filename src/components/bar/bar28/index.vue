@@ -6,7 +6,7 @@
 
 <script>
 
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -22,7 +22,7 @@ export default {
       window.addEventListener("resize", function () {
         myChart.resize();
       });
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var getname = ['确诊人员', '疑似人员', '阳性检测人员'];
       var getvalue = [300, 200, 100];
       var list = [
@@ -229,7 +229,7 @@ export default {
             hoverAnimation: false,
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.RadialGradient(.5, .5, 0.5, [{
+                color: new echarts.graphic.RadialGradient(.5, .5, 0.5, [{
                   offset: 0,
                   color: '#16272c'
                 },

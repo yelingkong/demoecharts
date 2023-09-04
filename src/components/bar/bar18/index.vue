@@ -7,8 +7,7 @@
 <script>
 
 import { FontChart } from '@/utils/utils'
-import $ from 'jquery'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -22,12 +21,12 @@ export default {
     drawLine () {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var dataArr = [{
         value: 135,
         name: '当月业务量'
       }]
-      var color = new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+      var color = new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
         offset: 0,
         color: 'rgba(5, 109, 128, 1)' // 0% 处的颜色
       },

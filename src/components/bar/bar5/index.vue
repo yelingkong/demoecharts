@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -19,7 +19,7 @@ export default {
     drawLine() {
       var that = this;
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var option = {
         title: {
           text: "65",

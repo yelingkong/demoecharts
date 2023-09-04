@@ -8,7 +8,7 @@
 
 import {FontChart} from "@/utils/utils";
 import $ from 'jquery'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -22,13 +22,13 @@ export default {
     drawLine() {
       var that = this;
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var whei = $(window).width()
       var dataArr = [{
         value: 135,
         name: '订单响应占比'
       }];
-      var color = new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+      var color = new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
         offset: 0,
         color: 'rgba(1, 90, 207, 1)' // 0% 处的颜色
       },
@@ -162,7 +162,7 @@ export default {
             z: 1,
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.RadialGradient(.5, .5, .8, [{
+                color: new echarts.graphic.RadialGradient(.5, .5, .8, [{
                   offset: 0,
                   color: '#063471'
                 },

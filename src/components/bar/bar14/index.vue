@@ -8,7 +8,7 @@
 
 import {FontChart} from "@/utils/utils";
 import $ from 'jquery'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -22,7 +22,7 @@ export default {
     drawLine() {
       var that = this;
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var labelData = [];
       var labelData1 = [];
       var option = {
@@ -89,7 +89,7 @@ export default {
             coordinateSystem: 'polar',
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+                color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [{
                   offset: 0,
                   color: 'rgba(1, 90, 207, 1)'
                 }, {
@@ -192,7 +192,7 @@ export default {
             hoverAnimation: false,
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 1, [{
+                color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
                   offset: 0,
                   color: '#07275B'
                 }, {

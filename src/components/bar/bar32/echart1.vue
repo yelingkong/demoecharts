@@ -7,7 +7,7 @@
 <script>
 
 import { FontChart } from '@/utils/utils'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -64,8 +64,8 @@ export default {
     drawLine () {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      const myChart = this.$echarts.init(this.$refs.echarts1)
-      var color = new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+      const myChart = echarts.init(this.$refs.echarts1)
+      var color = new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
         offset: 0,
         color: 'rgba(26, 80, 255, 1)' // 0% 处的颜色
       }, {

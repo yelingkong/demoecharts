@@ -11,7 +11,7 @@
 
 <script>
 
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -38,7 +38,7 @@ export default {
     drawLine() {
       var that = this;
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var getvalue = [88];
       var option = {
         title: {
@@ -93,7 +93,7 @@ export default {
           itemStyle: {
             normal: {
               opacity: 1,
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
                 offset: 0,
                 color: '#501af4' // 0% 处的颜色
               },

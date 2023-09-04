@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -20,7 +21,7 @@ export default {
       var list = ['#f9ac0c', '#4e9ac1', '#2bd1b1']
       var colorList = []
       list.forEach((type) => {
-        var color = new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+        var color = new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
           offset: 0,
           color: type.start
         },
@@ -38,7 +39,7 @@ export default {
     drawLine() {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var colors = this.colorList
       var data =
         [

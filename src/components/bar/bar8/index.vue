@@ -6,7 +6,7 @@
 
 <script>
 
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -20,7 +20,7 @@ export default {
     drawLine() {
       var that = this;
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var getxb1 = 600; //男生人数
       var getxb2 = 400; //女生人数
       var option = {
@@ -67,7 +67,7 @@ export default {
                 // name: "男生",
                 itemStyle: {
                   normal: {
-                    color: new this.$echarts.graphic.LinearGradient(
+                    color: new echarts.graphic.LinearGradient(
                       0,
                       0,
                       0,
@@ -91,7 +91,7 @@ export default {
                 value: getxb2,
                 itemStyle: {
                   normal: {
-                    color: new this.$echarts.graphic.LinearGradient(
+                    color: new echarts.graphic.LinearGradient(
                       0,
                       0,
                       0,
@@ -147,7 +147,7 @@ export default {
                 value: getxb1,
                 itemStyle: {
                   normal: {
-                    color: new this.$echarts.graphic.LinearGradient(
+                    color: new echarts.graphic.LinearGradient(
                       0,
                       0,
                       0,
@@ -171,7 +171,7 @@ export default {
                 value: getxb2,
                 itemStyle: {
                   normal: {
-                    color: new this.$echarts.graphic.LinearGradient(
+                    color: new echarts.graphic.LinearGradient(
                       0,
                       0,
                       0,

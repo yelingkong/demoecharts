@@ -6,10 +6,9 @@
 </template>
 
 <script>
-import echarts from 'echarts'
 import 'echarts-gl';
 import {FontChart} from "@/utils/utils";
-
+import * as echarts from "echarts"
 export default {
   name: "cityGreenLand",
   components: {},

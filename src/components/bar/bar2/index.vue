@@ -17,7 +17,7 @@
 
 <script>
 import $ from 'jquery'
-
+import * as echarts from "echarts"
 export default {
   name: 'pinggu',
   components: {},
@@ -64,7 +64,7 @@ export default {
       })
     },
     getechart () {
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var colorList = ['#15BBD7', '#0390FE', '#FFA904', '#E64804', '#D30D16']
       var data = this.list
       var rich = {

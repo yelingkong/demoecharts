@@ -8,7 +8,7 @@
 
 import {FontChart} from '@/utils/utils'
 import $ from 'jquery'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -22,10 +22,10 @@ export default {
     drawLine() {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var legends = ['志愿者团队1', '志愿者团队2', '志愿者团队3', '志愿者团队4', '志愿者团队5']
       var whei = $(window).width()
-      var colors1 = new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+      var colors1 = new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
         offset: 0,
         color: 'rgba(225, 183, 67, 1.00)' // 0% 处的颜色
       },
@@ -34,7 +34,7 @@ export default {
           color: 'rgba(169, 157, 118, 1.00)' // 100% 处的颜色
         }
       ])
-      var colors2 = new this.$echarts.graphic.LinearGradient(0, 1, 1, 0, [{
+      var colors2 = new echarts.graphic.LinearGradient(0, 1, 1, 0, [{
         offset: 0,
         color: 'rgba(55, 137, 238, 1.00)' // 0% 处的颜色
       },
@@ -43,7 +43,7 @@ export default {
           color: 'rgba(114, 140, 173, 1.00)' // 100% 处的颜色
         }
       ])
-      var colors3 = new this.$echarts.graphic.LinearGradient(0, 1, 1, 0, [{
+      var colors3 = new echarts.graphic.LinearGradient(0, 1, 1, 0, [{
         offset: 0,
         color: 'rgba(59, 233, 113, 1.00)' // 0% 处的颜色
       },
@@ -52,7 +52,7 @@ export default {
           color: 'rgba(114, 170, 136, 1.00)' // 100% 处的颜色
         }
       ])
-      var colors4 = new this.$echarts.graphic.LinearGradient(0, 1, 1, 0, [{
+      var colors4 = new echarts.graphic.LinearGradient(0, 1, 1, 0, [{
         offset: 0,
         color: 'rgba(57, 236, 233, 1.00)' // 0% 处的颜色
       },

@@ -8,7 +8,7 @@
 
 import {FontChart} from "@/utils/utils";
 import $ from 'jquery'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -22,7 +22,7 @@ export default {
     drawLine() {
       var that = this;
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var legendName = [
         "0.1-2.3 m/s", "2.3-4.5 m/s", "4.5-6.7 m/s", "6.7-8.9 m/s",
         "8.9-11.0 m/s", "11.0-13.2 m/s", "13.2-15.4 m/s", "15.4-17.6 m/s"];
@@ -116,7 +116,7 @@ export default {
             hoverAnimation: false,
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.RadialGradient(.5, .5, 0.5, [{
+                color: new echarts.graphic.RadialGradient(.5, .5, 0.5, [{
                   offset: 0,
                   color: '#154468'
                 },
