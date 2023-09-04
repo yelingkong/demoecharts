@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import * as echarts from "echarts"
 export default {
   name: "zhuzhuangtu",
   components: {},
@@ -30,7 +30,7 @@ export default {
     lines() {
       var that = this;
       window.addEventListener('resize', this.lines)
-      let myChart = this.$echarts.init(this.$refs.myChart1);
+      let myChart = echarts.init(this.$refs.myChart1);
       var option = {
         "textStyle": {
           "show": false,

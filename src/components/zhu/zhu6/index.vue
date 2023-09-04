@@ -6,6 +6,8 @@
 
 <script>
 
+import * as echarts from "echarts"
+
 export default {
   name: 'echarts1',
   components: {},
@@ -29,7 +31,7 @@ export default {
   methods: {
     drawLine () {
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echartsfg.init(this.$refs.echarts)
+      let myChart = echartsfg.init(this.$refs.echarts)
       let data = this.getdata()
       var option = {
         color: ['rgba(0, 204, 255, 1)',
@@ -138,7 +140,7 @@ export default {
       var data = [200, 102, 165, 245, 475, 201, 121, 325, 165, 245, 375, 201, 201]
       var data2 = []
       var itemStyle2 = {
-        color: new this.$echartsfg.graphic.LinearGradient(1, 0, 1, 1, [
+        color: new echartsfg.graphic.LinearGradient(1, 0, 1, 1, [
           {
             offset: 0,
             color: 'rgba(0, 204, 255, 1)'
@@ -150,7 +152,7 @@ export default {
         ]),
       }
       var itemStyle1 = {
-        color: new this.$echartsfg.graphic.LinearGradient(0, 0, 1, 1, [
+        color: new echartsfg.graphic.LinearGradient(0, 0, 1, 1, [
           {
             offset: 0,
             color: 'rgba(221,107,102,0.7)'
@@ -164,7 +166,7 @@ export default {
             color: 'rgb(186,39,38)'
           }
         ]),
-        borderColor: new this.$echartsfg.graphic.LinearGradient(
+        borderColor: new echartsfg.graphic.LinearGradient(
           0,
           0,
           1,

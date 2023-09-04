@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -33,7 +33,7 @@ export default {
     drawLine () {
       // 基于准备好的dom，初始化echarts实例
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       let option = {
         legend: {
           top: 0,

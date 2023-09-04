@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import * as echarts from "echarts"
 
 export default {
   name: 'echarts1',
@@ -45,7 +46,7 @@ export default {
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
       window.addEventListener('resize', this.drawLine)
-      const myChart = this.$echarts.init(this.$refs.echarts)
+      const myChart = echarts.init(this.$refs.echarts)
       var ydata = ['A2'] // y轴
       var dataArr = [1000] // 色块
       var whiteBar = [2889]

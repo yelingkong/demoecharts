@@ -6,7 +6,7 @@
 
 <script>
 import {FontChart} from '../../../utils/utils'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -33,7 +33,7 @@ export default {
     drawLine() {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var xdata = ['名称1', '名称2', '名称3', '名称4', '名称5', '名称6', '名称7',]
       var ydata = [10, 20, 30, 40, 50, 60, 70]
       let tdata = [
@@ -56,27 +56,27 @@ export default {
       }
 
       var attackSourcesColor = [
-        new this.$echarts.graphic.LinearGradient(0, 1, 1, 1, [
+        new echarts.graphic.LinearGradient(0, 1, 1, 1, [
           {offset: 0, color: 'rgba(205, 56, 69, 1)'},
           {offset: 1, color: 'rgba(253, 101, 107, 1)'},
         ]),
-        new this.$echarts.graphic.LinearGradient(0, 1, 1, 1, [
+        new echarts.graphic.LinearGradient(0, 1, 1, 1, [
           {offset: 0, color: 'rgba(243, 114, 63, 1)'},
           {offset: 1, color: 'rgba(255, 162, 86, 1)'},
         ]),
-        new this.$echarts.graphic.LinearGradient(0, 1, 1, 1, [
+        new echarts.graphic.LinearGradient(0, 1, 1, 1, [
           {offset: 0, color: 'rgba(247, 185, 52, 1)'},
           {offset: 1, color: 'rgba(254, 237, 147, 1)'},
         ]),
-        new this.$echarts.graphic.LinearGradient(0, 1, 1, 1, [
+        new echarts.graphic.LinearGradient(0, 1, 1, 1, [
           {offset: 0, color: 'rgba(1, 95, 212, 1)'},
           {offset: 1, color: 'rgba(26, 142, 250, 1)'},
         ]),
-        new this.$echarts.graphic.LinearGradient(0, 1, 1, 1, [
+        new echarts.graphic.LinearGradient(0, 1, 1, 1, [
           {offset: 0, color: 'rgba(0, 172, 146, 1)'},
           {offset: 1, color: 'rgba(45, 195, 165, 1)'},
         ]),
-        new this.$echarts.graphic.LinearGradient(0, 1, 1, 1, [
+        new echarts.graphic.LinearGradient(0, 1, 1, 1, [
           {offset: 0, color: 'rgba(100, 194, 112, 1)'},
           {offset: 1, color: 'rgba(160, 206, 58, 1)'},
         ]),

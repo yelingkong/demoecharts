@@ -3,6 +3,7 @@
   </div>
 </template>
 <script>
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -29,7 +30,7 @@ export default {
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var getname = this.list
       var getvalue = [4, 2, 3, 6,]
       var getvalue2 = [4, 2, 3, 6]
@@ -47,7 +48,7 @@ export default {
           axisPointer: {
             type: 'shadow',
             shadowStyle: {
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
                 color: 'rgba(255, 174, 0, 0.1)'
               }, {
@@ -131,7 +132,7 @@ export default {
             barWidth: '10px',
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
                   color: 'rgba(147, 198, 255, 1)'
                 }, {
@@ -149,7 +150,7 @@ export default {
             barWidth: '10px',
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
                   color: 'rgba(162, 218, 245, 1)'
                 }, {

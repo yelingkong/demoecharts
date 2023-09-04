@@ -6,7 +6,7 @@
 
 <script>
 import { FontChart } from '@/utils/utils'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -33,7 +33,7 @@ export default {
     drawLine () {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var xdata = ['2022', '2021', '2020', '2019', '2018']
       var ydata = [10, 20, 30, 40, 50, 60, 70]
       var option = {
@@ -127,7 +127,7 @@ export default {
           itemStyle: {
             normal: {
               barBorderRadius: [0, 0, 32, 0],
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
                 offset: 0,
                 color: 'rgba(0, 255, 246, 0)'
               }, {

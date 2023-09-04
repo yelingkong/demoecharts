@@ -7,7 +7,7 @@
 
 import { FontChart } from '@/utils/utils'
 import _ from 'lodash'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -33,7 +33,7 @@ export default {
     drawLine () {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(that.$refs.echarts)
+      let myChart = echarts.init(that.$refs.echarts)
 
       var option = {
         color: ['#004EFF', 'rgba(0, 144, 255, 1)'],

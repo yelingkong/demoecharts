@@ -6,7 +6,7 @@
 
 <script>
 import {FontChart} from '../../../utils/utils'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -33,7 +33,7 @@ export default {
     drawLine() {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var spNum = 5, _max = 100;
       var legendData = ['缺陷1', '缺陷2', '缺陷3', '缺陷4'];
       var y_data = ['周一', '周二', '周三', '周四'];

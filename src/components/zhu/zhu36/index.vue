@@ -5,9 +5,8 @@
 </template>
 
 <script>
-import echarts from "echarts";
 import dayjs from "dayjs";
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},

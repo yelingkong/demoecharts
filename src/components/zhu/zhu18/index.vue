@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import * as echarts from "echarts"
 export default {
   name: "paihangbang",
   components: {},
@@ -30,7 +30,7 @@ export default {
     lines() {
       var that = this;
       window.addEventListener('resize', this.lines)
-      let myChart = this.$echarts.init(this.$refs.myChart1);
+      let myChart = echarts.init(this.$refs.myChart1);
       // import echarts from 'echarts'
       var charts = { // 按顺序排列从大到小
         cityList: ['西安省体广场', '上海家利物业', '江苏路劲物业', '广州绿地集团', '新疆天正通达'],

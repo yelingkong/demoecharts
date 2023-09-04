@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -30,8 +30,8 @@ export default {
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
-      const CubeLeft = this.$echarts.graphic.extendShape({
+      let myChart = echarts.init(this.$refs.echarts)
+      const CubeLeft = echarts.graphic.extendShape({
         shape: {
           x: 0,
           y: 0
@@ -45,7 +45,7 @@ export default {
           ctx.moveTo(c0[0], c0[1]).lineTo(c1[0], c1[1]).lineTo(c2[0], c2[1]).lineTo(c3[0], c3[1]).closePath()
         }
       })
-      const CubeRight = this.$echarts.graphic.extendShape({
+      const CubeRight = echarts.graphic.extendShape({
         shape: {
           x: 0,
           y: 0
@@ -59,7 +59,7 @@ export default {
           ctx.moveTo(c1[0], c1[1]).lineTo(c2[0], c2[1]).lineTo(c3[0], c3[1]).lineTo(c4[0], c4[1]).closePath()
         }
       })
-      const CubeTop = this.$echarts.graphic.extendShape({
+      const CubeTop = echarts.graphic.extendShape({
         shape: {
           x: 0,
           y: 0
@@ -72,9 +72,9 @@ export default {
           ctx.moveTo(c1[0], c1[1]).lineTo(c2[0], c2[1]).lineTo(c3[0], c3[1]).lineTo(c4[0], c4[1]).closePath()
         }
       })
-      this.$echarts.graphic.registerShape('CubeLeft', CubeLeft)
-      this.$echarts.graphic.registerShape('CubeRight', CubeRight)
-      this.$echarts.graphic.registerShape('CubeTop', CubeTop)
+      echarts.graphic.registerShape('CubeLeft', CubeLeft)
+      echarts.graphic.registerShape('CubeRight', CubeRight)
+      echarts.graphic.registerShape('CubeTop', CubeTop)
       const VALUE = [2012, 1230, 3790, 2349, 1654, 1230, 3790]
       var option = {
         grid: {
@@ -152,7 +152,7 @@ export default {
                   xAxisPoint: api.coord([api.value(0), 0])
                 },
                 style: {
-                  fill: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                     offset: 0,
                     color: '#3B80E2'
                   },
@@ -173,7 +173,7 @@ export default {
                   xAxisPoint: api.coord([api.value(0), 0])
                 },
                 style: {
-                  fill: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                     offset: 0,
                     color: '#3B80E2'
                   },
@@ -194,7 +194,7 @@ export default {
                   xAxisPoint: api.coord([api.value(0), 0])
                 },
                 style: {
-                  fill: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                     offset: 0,
                     color: '#3B80E2'
                   },

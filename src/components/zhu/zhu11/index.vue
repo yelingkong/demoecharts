@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -30,7 +30,7 @@ export default {
     drawLine () {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var option = {
         color: ['rgba(0, 204, 255, 1)',
           'rgba(39, 120, 255, 1)',
@@ -211,7 +211,7 @@ export default {
             },
             areaStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
                   color: 'rgba(160, 57, 247, 0.5)'
                 },
@@ -252,7 +252,7 @@ export default {
             },
             areaStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
                   color: 'rgba(0, 204, 255, 0.5)'
                 },
@@ -293,7 +293,7 @@ export default {
             },
             areaStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
                   color: 'rgba(253, 168, 57, 0.5)'
                 },
