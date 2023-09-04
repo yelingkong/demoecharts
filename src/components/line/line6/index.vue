@@ -7,7 +7,7 @@
 <script>
 
 import {FontChart} from "@/utils/utils";
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -32,7 +32,7 @@ export default {
     drawLine() {
       var that = this;
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(that.$refs.echarts)
+      let myChart = echarts.init(that.$refs.echarts)
       var option = {
         grid: {
           left: '5%',
@@ -136,7 +136,7 @@ export default {
             },
             areaStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(
+                color: new echarts.graphic.LinearGradient(
                   0,
                   0,
                   0,

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -30,7 +30,7 @@ export default {
     drawLine() {
       var that = this;
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(that.$refs.echarts)
+      let myChart = echarts.init(that.$refs.echarts)
       let color = [
         "#109ce5",
       ];
@@ -134,7 +134,7 @@ export default {
           symbol: 'circle',//数据交叉点样式
           areaStyle: {
             normal: {
-              color: new this.$echarts.graphic.LinearGradient(
+              color: new echarts.graphic.LinearGradient(
                 0,
                 0,
                 0,

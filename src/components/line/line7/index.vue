@@ -6,7 +6,7 @@
 
 <script>
 import { FontChart } from '@/utils/utils'
-
+import * as echarts from 'echarts'
 export default {
   name: 'echarts1',
   components: {},
@@ -29,7 +29,7 @@ export default {
       // 基于准备好的dom，初始化echarts实例
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var option = {
         tooltip: {
           show: true,

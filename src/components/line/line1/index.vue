@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -58,13 +59,13 @@ export default {
       // 基于准备好的dom，初始化echarts实例
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var option = {
         tooltip: {
           trigger: 'axis',
           axisPointer: {
             lineStyle: {
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
                 color: 'rgba(15, 41, 104, 0)'
               },

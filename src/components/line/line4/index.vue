@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -30,7 +30,7 @@ export default {
     drawLine() {
       var that = this;
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(that.$refs.echarts)
+      let myChart = echarts.init(that.$refs.echarts)
       var option = {
         tooltip: {
           trigger: 'axis',
@@ -157,7 +157,7 @@ export default {
             areaStyle: { //区域填充样式
               normal: {
                 //线性渐变，前4个参数分别是x0,y0,x2,y2(范围0~1);相当于图形包围盒中的百分比。如果最后一个参数是‘true’，则该四个值是绝对像素位置。
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
                   color: 'rgba(0, 99, 190, 0.4)'
                 },

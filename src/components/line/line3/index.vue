@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -30,7 +30,7 @@ export default {
     drawLine() {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var option = {
         grid: {
           left: '5%',
@@ -123,7 +123,7 @@ export default {
                 },
                 areaStyle: {
                   //color: '#94C9EC'
-                  color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
                     offset: 0,
                     color: 'rgba(0, 204, 255, 0.8)'
                   }, {
@@ -157,7 +157,7 @@ export default {
                 },
                 areaStyle: {
                   //color: '#94C9EC'
-                  color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
                     offset: 0,
                     color: 'rgba(57, 253, 192, 0.8)'
                   }, {
@@ -183,7 +183,7 @@ export default {
                 },
                 areaStyle: {
                   //color: '#94C9EC'
-                  color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
                     offset: 0,
                     color: 'rgba(160, 57, 247, 0.8)'
                   }, {
@@ -209,7 +209,7 @@ export default {
                 },
                 areaStyle: {
                   //color: '#94C9EC'
-                  color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
                     offset: 0,
                     color: 'rgba(253, 168, 57, 0.8)'
                   }, {
@@ -235,7 +235,7 @@ export default {
                 },
                 areaStyle: {
                   //color: '#94C9EC'
-                  color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
                     offset: 0,
                     color: 'rgba(45, 89, 255, 0.8)'
                   }, {

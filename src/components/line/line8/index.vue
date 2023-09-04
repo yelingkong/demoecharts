@@ -6,10 +6,9 @@
 
 <script>
 
-import moment from 'moment'
 import {FontChart} from '@/utils/utils'
 import dian from './dian.png'
-
+import * as echarts from 'echarts'
 export default {
   name: 'echarts1',
   components: {},
@@ -36,7 +35,7 @@ export default {
     drawLine() {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var list = this.list
       var xdata = ['2016年', '2017年', '2018年', '2019年', '2020年', '2021年']
       var ydata = [20, 20, 30, 40, 20, 10]

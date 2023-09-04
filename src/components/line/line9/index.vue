@@ -8,7 +8,7 @@
 
 import {FontChart} from "@/utils/utils";
 import dian from './dian.png'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -35,7 +35,7 @@ export default {
     drawLine() {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var xdata = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']
       var ydata = [20, 20, 40, 50, 20, 10, 50, 20, 20, 40, 50, 20, 10, 50, 20, 20, 40, 50, 20, 10, 50, 10, 50,]
       var option = {
@@ -157,7 +157,7 @@ export default {
           },
           areaStyle: {
             normal: {
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0,
                 color: 'rgba(0, 234, 255, 0.3)'
               },
