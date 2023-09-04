@@ -6,9 +6,8 @@
 
 <script>
 
-import {ArrayMax, FontChart} from "@/utils/utils";
 import types from '../../../data/type.json'
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -36,7 +35,7 @@ export default {
     drawLine() {
       var that = this
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
       var option = {
         normal: {
           top: 200,

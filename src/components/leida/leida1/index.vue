@@ -7,7 +7,7 @@
 <script>
 
 import {FontChart} from "@/utils/utils";
-
+import * as echarts from "echarts"
 export default {
   name: 'echarts1',
   components: {},
@@ -37,7 +37,7 @@ export default {
       ]
       var dataValue = [30, 400, 300, 400]
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts)
+      let myChart = echarts.init(this.$refs.echarts)
 
       function contains(arr, obj) {
         var i = arr.length;
