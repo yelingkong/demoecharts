@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import * as echarts from "echarts"
 
 export default {
   name: 'echarts1',
@@ -25,7 +26,7 @@ export default {
   methods: {
     drawLine() {
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var dataArr = 44;
       var colorSet = {
         color: '#42506E'
@@ -264,7 +265,7 @@ export default {
             axisLine: {
               lineStyle: {
                 color: [
-                  [dataArr / 100, new this.$echarts.graphic.LinearGradient(
+                  [dataArr / 100, new echarts.graphic.LinearGradient(
                     0, 1, 0, 0, [{
                       offset: 0,
                       color: 'rgba(0, 123, 255, 0.1)',

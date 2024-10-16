@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import * as echarts from "echarts"
 
 export default {
   name: 'echarts1',
@@ -26,7 +27,7 @@ export default {
   methods: {
     drawLine() {
       window.addEventListener('resize', this.drawLine)
-      let myChart = this.$echarts.init(this.$refs.echarts1)
+      let myChart = echarts.init(this.$refs.echarts1)
       var option = {
         series: [{
           type: 'gauge',
