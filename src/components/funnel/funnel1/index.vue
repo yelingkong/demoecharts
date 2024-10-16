@@ -8,6 +8,7 @@
 
 import {ArrayMax, FontChart} from "@/utils/utils";
 import types from '../../../data/type.json'
+import * as echarts from "echarts"
 
 export default {
   name: 'echarts1',
@@ -34,9 +35,9 @@ export default {
     drawLine() {
       var that = this;
       window.addEventListener("resize", this.drawLine);
-      let myChart = this.$echarts.init(this.$refs.echarts);
+      let myChart = echarts.init(this.$refs.echarts);
       var colorList = [
-        new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+        new echarts.graphic.LinearGradient(0, 1, 0, 0, [
           {
             offset: 0,
             color: "#8EB415",
@@ -46,7 +47,7 @@ export default {
             color: "#688D20",
           },
         ]),
-        new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+        new echarts.graphic.LinearGradient(0, 1, 0, 0, [
           {
             offset: 0,
             color: "#068577",
@@ -56,7 +57,7 @@ export default {
             color: "#15B58A",
           },
         ]),
-        new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+        new echarts.graphic.LinearGradient(0, 1, 0, 0, [
           {
             offset: 0,
             color: "#047DA3",
@@ -66,7 +67,7 @@ export default {
             color: "#04A7C6",
           },
         ]),
-        new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+        new echarts.graphic.LinearGradient(0, 1, 0, 0, [
           {
             offset: 0,
             color: "#0D5797",
